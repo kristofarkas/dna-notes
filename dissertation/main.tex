@@ -47,9 +47,7 @@ The structure of biomolecule, like DNA is complex and interesting. How can we ga
 
 Nonetheless, as a starting model, even in silico methods take data from experiment, therefore it is briefly described here.
 
-\subsection{Experimental models}
-
-\subsubsection{X-RAY crystal structure}
+\input{experimental_models}
 
 \subsection{Computational modelling}
 
@@ -124,7 +122,24 @@ This means that the temperature and the free energy difference are closely relat
 
 \section{Computational methods for free energy calculations}
 
-The aim of this thesis is to develop and use computational methods to calculate the free energy change of intercalation of a molecule between DNA base pairs. To compute the free energy this way offers a number of advantages over investigating the system experimentally. This is because it hard or impossible to study these systems at an atomistic level. Molecular simulations provide this level of detail, but in order to understand the macroscopic properties (like the free energy) we have to use statistical methods to derive them from the microscopic simulations. 
+An approach to calculating the binding free energy is via computational techniques. This method form the basis of this thesis. To compute the free energy this way offers a number of advantages over investigating the system experimentally. Molecules that cannot be synthesis can be simulated in silico, and we can study systems at an atomistic level. Molecular simulations provide this level of detail, but in order to calculate the macroscopic properties (like the free energy) we have to use statistical methods to derive them from the the microscopic simulations.
+
+\subsection{Theoretically exact free energy methods}
+
+There are a number of formally exact methods to calculate the free energy from simulation. By exact we mean that it contains to empirically fitted parameters in the equations. Two of the main techniques are called free energy perturbation (FEP) which is based on exponential averages of the change in the potential energy, and thermodynamic integration (TI) which is based on integrating the system as it changes from one state to another through an alchemical pathway. Due to considerations in computational efficiecy, the theoretically exact calculations compute free energy \emph{differences} simulated via non-physical system transformations (known as alchemical transformations). A thermodynamic cycle can illustrate how these alchemical changes can be related to relative differences which are of real interest
+
+\subsubsection{The thermodynamic cycle}
+
+Free energy is a function of state and as such cumulative variations around a closed thermodynamic cycle sum to zero. Figure 3.2 depicts such a cycle which could be used to calculate the relative binding affinity, ∆∆Gbind, of two different ligands to the same target where
+
+\begin{figure}
+  \centering
+  \input{afe_diagramm}
+  \caption{Thermodynamic cycle}
+  \label{fig:tiescycle}
+\end{figure}
+
+\subsection{Approximate methods}
 
 \subsection{Sources of error}
 
@@ -132,10 +147,11 @@ Modelling the system and running simulations, just like experimental techniques,
 
 \subsubsection{Incomplete phase space sampling}
 
-In order to get reliable and converged results a large part of the phase space has to be sampled. The phase space of large biomolecule, like DNA and proteins, are large, and simulations of the order of a tens of nanoseconds cannot completely explore.
+It is key to sample the phase space adequately and obtain results that are well converged, as this is a requirement for reliable free energy values. The complete phase space of DNA is large, and it is not possible to sample all of this with simulation methods, therefore we have to make sure that the phase space that we do sample is representative. To understand what we mean by representative sampling, consider that the phase space of a DNA is a set of energy minima separated by energy barriers of different size. Being and sampling only one minima is clear to not be enough to get reliable results. On the other hand if we sample a large number of these minimise the changes are that a representative portion of the landscape has been explored. In general the complete topology of the landscape is not known, and neither is the extent to which our simulation sampled it, therefore comparing the observable results to experiment is an important metric to consider.
 
 \subsubsection{Force field accuracy}
 
+Even if we were to completely sample the free energy landscape, the accuracy of our results will be limited by how well the model describes the physical system. Because for the systems under investigation in this thesis, quantum mechanical approaches are impractical due to the size of the system, the accuracy of the model will largely depend on how well the force field describes the interactions of the particles.
 
 \input{methods}
 

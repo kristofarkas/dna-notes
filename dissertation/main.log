@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.16)  22 AUG 2018 13:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.16)  22 AUG 2018 14:10
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1838,9 +1838,9 @@ Package caption Info: End \AtBeginDocument code.
 Chapter 1.
 (./introduction.tex [3
 
-]) [4] [5]
+]) [4] (./experimental_models.tex) [5]
 
-LaTeX Warning: Reference `sec:mm' on page 6 undefined on input line 76.
+LaTeX Warning: Reference `sec:mm' on page 6 undefined on input line 74.
 
 [6] (./md_steps.tex [7] [8] [9]) (./integrators_thermostats_barostats.tex [10]
 Overfull \hbox (12.91724pt too wide) in paragraph at lines 21--22
@@ -1866,12 +1866,16 @@ Overfull \hbox (12.22798pt too wide) in paragraph at lines 1--1
 []\OT1/cmr/bx/n/14.4 Molecular Me-chan-ics Poisson-Boltzmann Sur-
  []
 
-(./mmpbsa_diagramm.tex) [16]) (./ties.tex (./afe_diagramm.tex))) (./results.tex [17] [18]
+(./mmpbsa_diagramm.tex) [16]) (./ties.tex (./afe_diagramm.tex)) (./htbac.tex [17]
+
+LaTeX Warning: Reference `fig:htbac' on page 18 undefined on input line 12.
+
+[18] [19])) (./results.tex [20]
 Chapter 3.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./results_esmacs.tex [19
+(./results_esmacs.tex [21
 
 ] (./bootstrap_plot.tex
 PGFPlots: reading {bootstrap.csv}
@@ -1880,9 +1884,9 @@ Overfull \hbox (33.02913pt too wide) in paragraph at lines 22--23
 \OT1/cmr/m/n/10 The ex-per-i-men-tal free en-ergy val-ues are be-tween [][] and [][],
  []
 
-[20]
+[22]
 
-LaTeX Warning: Reference `fig:corrmat' on page 21 undefined on input line 31.
+LaTeX Warning: Reference `fig:corrmat' on page 23 undefined on input line 31.
 
 (./mmpbsa_plot.tex
 PGFPlots: reading {4-ring-mmpbsa.csv}
@@ -1901,14 +1905,14 @@ PGFPlots: reading {4-ring-mmpbsa-failednmode.csv}
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./results_ties.tex [21]
+) (./results_ties.tex [23]
 Overfull \vbox (9.54454pt too high) has occurred while \output is active []
 
- [22] (./ties_plot.tex
+ [24] (./ties_plot.tex
 PGFPlots: reading {ties.csv}
-))) (./conclusion.tex [23]
+))) (./conclusion.tex [25]
 Chapter 4.
-) [24
+) [26
 
 ] (./main.aux)
 
@@ -1916,18 +1920,18 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 36120 strings out of 492646
- 882471 string characters out of 6129563
- 1169527 words of memory out of 5000000
- 39512 multiletter control sequences out of 15000+600000
+ 36127 strings out of 492646
+ 882574 string characters out of 6129563
+ 1170527 words of memory out of 5000000
+ 39513 multiletter control sequences out of 15000+600000
  542100 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,21n,136p,2205b,2596s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (25 pages, 217396 bytes).
+Output written on main.pdf (27 pages, 224294 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
+ 146 PDF objects out of 1000 (max. 8388607)
+ 102 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

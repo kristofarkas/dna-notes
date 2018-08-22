@@ -302,6 +302,8 @@ INPUT introduction.tex
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT experimental_models.tex
+INPUT experimental_models.tex
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT md_steps.tex
 INPUT md_steps.tex
@@ -320,6 +322,8 @@ INPUT ties.tex
 INPUT ties.tex
 INPUT afe_diagramm.tex
 INPUT afe_diagramm.tex
+INPUT htbac.tex
+INPUT htbac.tex
 INPUT results.tex
 INPUT results.tex
 INPUT results_esmacs.tex
