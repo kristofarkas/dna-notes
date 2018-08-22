@@ -1,0 +1,51 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{siunitx}
+
+\usepackage{booktabs}
+
+\begin{document}
+
+
+\begin{table}
+
+  \begin{tabular}{l*{6}{S[table-auto-round,table-format=-1.2]}}
+  \toprule
+  {} &  {Ligand} &         {$\Delta$G} &       {$\epsilon$} &   {exp} &  {$\epsilon_{exp}$} &    {$\Delta_{exp}$G} \\
+  \midrule
+  0  &    1 & -10.854247 &  1.293405 &  5.93 &     0.07 & -3.532881 \\
+  3  &    4 & -10.279299 &  1.312382 &  5.93 &     0.08 & -3.532881 \\
+  4  &    5 &  -9.685134 &  1.377563 &  6.01 &     0.06 & -3.580542 \\
+  5  &    6 & -10.309081 &  1.297130 &  6.05 &     0.06 & -3.604372 \\
+  6  &    7 &  -7.458791 &  1.400999 &  6.01 &     0.06 & -3.580542 \\
+  7  &    8 & -11.461990 &  1.153338 &  6.19 &     0.08 & -3.687779 \\
+  8  &    9 &  -7.237980 &  1.414280 &  5.98 &     0.07 & -3.562669 \\
+  9  &   10 & -10.234141 &  1.247446 &  6.16 &     0.15 & -3.669906 \\
+  10 &   11 &  -8.082266 &  1.554964 &  5.87 &     0.10 & -3.497135 \\
+  11 &   12 & -10.743018 &  1.301526 &  5.89 &     0.09 & -3.509050 \\
+  12 &   13 &  -7.171338 &  1.439743 &  6.94 &     0.07 & -4.134602 \\
+  13 &   14 &  -7.936663 &  1.617093 &  6.79 &     0.12 & -4.045238 \\
+  14 &   15 &  -9.120642 &  1.271033 &  6.91 &     0.14 & -4.116729 \\
+  15 &   16 &  -9.286455 &  1.261738 &  6.61 &     0.12 & -3.938000 \\
+  16 &   17 &  -8.588631 &  1.327092 &  6.83 &     0.09 & -4.069068 \\
+  17 &   18 &  -9.572475 &  1.265917 &  6.58 &     0.10 & -3.920127 \\
+  18 &   19 &  -9.368661 &  1.369681 &  6.94 &     0.11 & -4.134602 \\
+  19 &   20 & -10.795728 &  1.217021 &  6.94 &     0.09 & -4.134602 \\
+  \bottomrule
+  \end{tabular}
+
+\caption{Calculated free energies with 2 trajectory MMPBSA analysis, 5 replicas per simulation of 4 ns (2 ns equilibration). Error is 95\% confidence interval of the standard error of mean. All values in kcal/mol.}
+\label{tab:data}
+
+\end{table}
+
+\begin{figure}
+  \includegraphics{dna-mmpbsa}
+  \caption{Plot of calculated free energies versus experimental values with error bars.}
+  \label{fig:mmpbsa}
+\end{figure}
+
+
+\end{document}

@@ -1,0 +1,25 @@
+\chapter{Methods}
+
+\section{Experimental measurements of intercalation}
+
+(~for example through displacement assays (move to experimental section, experimental difficulties, why is it hard to measure DNA intercalator biding affinity)~). ~Here we looked at a congeneric series intercalators based on a common quinoxaline scaffold with experimental measurements \cite{}.(Move to methods)~
+
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{intercalators.pdf}
+	\caption{A congeneric series of DNA intercalators. All molecules share a common quinoxaline scaffold. ~The experimental study was conducted by \cite{} producing binding affinity values that we could compare our calculations to. (Mention it in the experimental section)~ }
+	\label{fig:intercalators}
+\end{figure}
+
+
+\section{Docking and scoring}
+
+For certain application, like that of high throughput screening in the pharmaceutical industry, it is important to assess the binding strenght of a large number of drugs or molecules bound to large biological macromolecules like proteins or DNA in a very fast manner. This is done via easily evalutable scoring function, some notable examples including: AutoDock, X-Score, DrugScore, ChemScore, GOLD, FlexX, LigScore and LUDI. Generally speaking, they take into account a single structure and little or no protein movement is taking into account during evaluation. One of the simplest scoring function  consists of the empirical surface-area based method that shows that ligand binding reduces the surface are in the receptor that is accessible to the surrounding solvent. The function makes the assumption that the polar and non-polar area on the surface of the molecule has a linear relation to the free energy. Due to the crude simplifications in these models, they have weak predictive power and are rarely used for accurate free energy estimation. Here, a scoring methods is used for two reasons: (i) to find an initial structure for the intercalator-DNA complex, and (ii) to compare the scores and hence the ranking of this methods with other, more accurate models. Docking and scoring has its place in the drug discovery pipeline. In high throughput scenarios, where speed is an important factor due to the large number of molecules that need to be tested, scoring functions are often used to filter out candidates that have low probability of being good binders.
+
+\subsection{Starting structures for docking}
+
+
+
+\input{mmpbsa}
+
+\input{ties}
+

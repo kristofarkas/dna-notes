@@ -1,0 +1,154 @@
+\centering
+
+\subfloat{%
+\begin{tikzpicture}%3traj
+\begin{axis}[
+  scale=0.7,
+  xtick distance = {0.1},
+  ytick distance = {1},
+  %xlabel={\phantom{nothing}}, 
+  %ylabel={Calculated $\Delta$G (\si{\kilo\calorie\per\mole})},
+  legend pos=south east]
+  
+  \addplot[blue!70!white] table [col sep=comma, x=exp, y={create col/linear regression={y=dg_3_traj}}] {4-ring-mmpbsa.csv};
+  % \addplot[red!70!white] table [col sep=comma, x=exp, y={create col/linear regression={y=dg_3_traj_nmode}}] {4-ring-mmpbsa.csv};
+
+  \addplot[blue, mark=*, only marks, error bars/.cd,
+          x dir=both, x explicit,
+          y dir=both, y explicit,] table 
+          [col sep=comma, x=exp, y=dg_3_traj, y error=dg_3_traj_err, x error=exp_err] {4-ring-mmpbsa.csv};
+  % \addplot[red, mark=*, only marks, error bars/.cd,
+  %         x dir=both, x explicit,
+  %         y dir=both, y explicit,] table[col sep=comma, x=exp, y=dg_3_traj_nmode, y error=dg_3_traj_err, x error=exp_err] {4-ring-mmpbsa.csv};
+  
+  \legend{3 trajectory}%, w/ n-mode}
+
+\end{axis}  
+\end{tikzpicture}%
+}
+\subfloat{%
+\begin{tikzpicture}%3traj-nmode
+\begin{axis}[
+  scale=0.7,
+  xtick distance = {0.1},
+  ytick distance = {1},
+  %xlabel={\phantom{nothing}}, 
+  %ylabel={Calculated $\Delta$G (\si{\kilo\calorie\per\mole})},
+  legend pos=south east]
+  
+  \addplot[red!70!white] table [col sep=comma, x=exp, y={create col/linear regression={y=dg_3_traj_nmode}}] {4-ring-mmpbsa-failednmode.csv};
+  % \addplot[red!70!white] table [col sep=comma, x=exp, y={create col/linear regression={y=dg_3_traj_nmode}}] {4-ring-mmpbsa.csv};
+
+  \addplot[red, mark=*, only marks, error bars/.cd,
+          x dir=both, x explicit,
+          y dir=both, y explicit,] table 
+          [col sep=comma, x=exp, y=dg_3_traj_nmode, y error=dg_3_traj_err, x error=exp_err] {4-ring-mmpbsa-failednmode.csv};
+  % \addplot[red, mark=*, only marks, error bars/.cd,
+  %         x dir=both, x explicit,
+  %         y dir=both, y explicit,] table[col sep=comma, x=exp, y=dg_3_traj_nmode, y error=dg_3_traj_err, x error=exp_err] {4-ring-mmpbsa.csv};
+  
+  \legend{3 trajectory + nmode}%, w/ n-mode}
+
+\end{axis}  
+\end{tikzpicture}
+}
+
+\subfloat{%
+\begin{tikzpicture}%2traj
+\begin{axis}[
+  scale=0.7,
+  xtick distance = {0.1},
+  ytick distance = {1},
+  %xlabel=Experimental $\Delta$G (\si{\kilo\calorie\per\mole}), 
+  %ylabel={Calculated $\Delta$G (\si{\kilo\calorie\per\mole})},
+  legend pos=south east
+  ]
+  
+  \addplot[blue!70!white] table [col sep=comma, x=exp, y={create col/linear regression={y=dg_2_traj}}] {4-ring-mmpbsa.csv};    
+  % \addplot[red!70!white] table [col sep=comma, x=exp, y={create col/linear regression={y=dg_2_traj_nmode}}] {4-ring-mmpbsa.csv};
+
+  \addplot[blue, mark=*, only marks, only marks, error bars/.cd,
+          x dir=both, x explicit,
+          y dir=both, y explicit,] table[col sep=comma, x=exp, y=dg_2_traj, y error=dg_2_traj_err, x error=exp_err] {4-ring-mmpbsa.csv};
+  % \addplot[red, mark=*, only marks, only marks, error bars/.cd,
+  %         x dir=both, x explicit,
+  %         y dir=both, y explicit,] table[col sep=comma, x=exp, y=dg_2_traj_nmode, y error=dg_2_traj_err, x error=exp_err] {4-ring-mmpbsa.csv};
+  \legend{2 trajectory}%, w/ n-mode}
+
+\end{axis}  
+\end{tikzpicture}%
+}
+\subfloat{%
+\begin{tikzpicture}%2traj-nmode
+\begin{axis}[
+  scale=0.7,
+  xtick distance = {0.1},
+  ytick distance = {1},
+  %xlabel=Experimental $\Delta$G (\si{\kilo\calorie\per\mole}), 
+  %ylabel={Calculated $\Delta$G (\si{\kilo\calorie\per\mole})},
+  legend pos=south east
+  ]
+  
+  \addplot[red!70!white] table [col sep=comma, x=exp, y={create col/linear regression={y=dg_2_traj_nmode}}] {4-ring-mmpbsa-failednmode.csv};    
+  % \addplot[red!70!white] table [col sep=comma, x=exp, y={create col/linear regression={y=dg_2_traj_nmode}}] {4-ring-mmpbsa.csv};
+
+  \addplot[red, mark=*, only marks, only marks, error bars/.cd,
+          x dir=both, x explicit,
+          y dir=both, y explicit,] table[col sep=comma, x=exp, y=dg_2_traj_nmode, y error=dg_2_traj_err, x error=exp_err] {4-ring-mmpbsa-failednmode.csv};
+  % \addplot[red, mark=*, only marks, only marks, error bars/.cd,
+  %         x dir=both, x explicit,
+  %         y dir=both, y explicit,] table[col sep=comma, x=exp, y=dg_2_traj_nmode, y error=dg_2_traj_err, x error=exp_err] {4-ring-mmpbsa.csv};
+  \legend{2 trajectory + nmode}%, w/ n-mode}
+
+\end{axis}  
+\end{tikzpicture}
+}
+
+\subfloat{%
+\begin{tikzpicture}%1traj
+\begin{axis}[
+  scale=0.7,
+  xtick distance = {0.1},
+  ytick distance = {1},
+  %xlabel={\phantom{nothing}}, 
+  %ylabel={Calculated $\Delta$G (\si{\kilo\calorie\per\mole})},
+  legend pos=south east
+  ]
+  
+  \addplot[blue!70!white] table [col sep=comma, x=exp, y={create col/linear regression={y=dg_1_traj}}] {4-ring-mmpbsa.csv};    
+  % \addplot[red!70!white] table [col sep=comma, x=exp, y={create col/linear regression={y=dg_2_traj_nmode}}] {4-ring-mmpbsa.csv};
+
+  \addplot[blue, mark=*, only marks, only marks, error bars/.cd,
+          x dir=both, x explicit,
+          y dir=both, y explicit,] table[col sep=comma, x=exp, y=dg_1_traj, y error=dg_1_traj_err, x error=exp_err] {4-ring-mmpbsa.csv};
+  % \addplot[red, mark=*, only marks, only marks, error bars/.cd,
+  %         x dir=both, x explicit,
+  %         y dir=both, y explicit,] table[col sep=comma, x=exp, y=dg_2_traj_nmode, y error=dg_2_traj_err, x error=exp_err] {4-ring-mmpbsa.csv};
+  \legend{1 trajectory}%, w/ n-mode}
+\end{axis}  
+\end{tikzpicture}%
+}
+\subfloat{%
+\begin{tikzpicture}%1traj-nmode
+\begin{axis}[
+  scale=0.7,
+  xtick distance = {0.1},
+  ytick distance = {1},
+  %xlabel={\phantom{nothing}}, 
+  %ylabel={Calculated $\Delta$G (\si{\kilo\calorie\per\mole})},
+  legend pos=south east
+  ]
+  
+  \addplot[red!70!white] table [col sep=comma, x=exp, y={create col/linear regression={y=dg_1_traj_nmode}}] {4-ring-mmpbsa-failednmode.csv};    
+  % \addplot[red!70!white] table [col sep=comma, x=exp, y={create col/linear regression={y=dg_2_traj_nmode}}] {4-ring-mmpbsa.csv};
+
+  \addplot[red, mark=*, only marks, only marks, error bars/.cd,
+          x dir=both, x explicit,
+          y dir=both, y explicit,] table[col sep=comma, x=exp, y=dg_1_traj_nmode, y error=dg_1_traj_err, x error=exp_err] {4-ring-mmpbsa-failednmode.csv};
+  % \addplot[red, mark=*, only marks, only marks, error bars/.cd,
+  %         x dir=both, x explicit,
+  %         y dir=both, y explicit,] table[col sep=comma, x=exp, y=dg_2_traj_nmode, y error=dg_2_traj_err, x error=exp_err] {4-ring-mmpbsa.csv};
+  \legend{1 trajectory + nmode}%, w/ n-mode}
+\end{axis}  
+\end{tikzpicture}
+}

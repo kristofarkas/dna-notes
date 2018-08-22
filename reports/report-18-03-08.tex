@@ -1,0 +1,59 @@
+\documentclass{article}
+
+\title{Report}
+
+\begin{document}
+
+\maketitle
+
+There are two major tasks that I am working on. One is to calculate the binding affinity of an intercalator-DNA interaction, and the other is to build arbitrary DNA intercalator complex. Here is a detailed report of where I am now, and the problems that I am encountering.
+
+\section{Binding affinity}
+
+\subsection{Find and prepare experimental structures}
+
+Despite my previous attempt at finding experimental structures, it has become clear to me that the method I used was \emph{inadequate} and missed a lot of potentially good starting structures. There are roughly 400 drug-DNA  experimental structures in the database. Filtering is required because of side groove intercalators, bis-intercalators, or protein-complexed structures. My initial attempt was to filter for \texttt{interca} in the description of the structure (i.e. the paper title and abstract), but this leaves a lot of good intercalator structures unidentified.
+
+\begin{enumerate}
+  \item \textbf{Problem:} develop a more robust way to find experimental structures.
+  \item \textbf{Problem:} how to prepare structures for simulation. If multiple intercalators are present, remove all but one? Strip water, ions (these will be added later in the parametrisation pipeline)?
+  \item \textbf{Problem:} DNA strand in crystal structure is not long enough, or intercalator is at the end of strand. There is a need to attach base pairs to crystal structures. How? If this is done, than we might just delete all base pairs but the two that have the intercalator and rebuild the whole strand. Still not sure how this could be done.
+\end{enumerate}
+
+\subsection{Builder pipeline}
+
+I have been working on developing the automated pipeline to parametrise the system for simulations. This is composed of the following steps:
+
+\begin{enumerate}
+  \item Identify components in PDB (intercalator, DNA, other)
+  \item Clear all unwanted components (water, ions, multiple intercalators)
+  \item Add hydrogens
+  \item Generate charged for ligand with AM1-BCC and parametrise with GAFF2
+  \item Parametrise rest of the system with PARM-BSC1 in \texttt{Tleap}
+\end{enumerate}
+
+Currently not all part of this pipeline are finished, but only more time is required at this point. I am using the OpenEYE package to do the charge assignment.
+
+\section{Docking}
+
+\subsection{Why my original proposal doesn't work}
+
+The original proposal for manually inserting a small molecule between two basepairs is not scientific. It will probably not produce the right conformation. A more robust way is to dock it using one of the biased MD algorithms like steered MD or targeted MD. This will be required for further analysis with MSM later anyways. \textbf{Should I go down this route?}
+
+\section{Analysis}
+
+I want to have a way to measure parameters in DNA structures from the trajectory data. What are the indicators? Some of the ones I can think of is inter basepair distance, but there are other indicators, like basepair twist, roll, etc?
+
+\section{Better management of the project on my part}
+
+Discussed in meeting:
+
+\begin{itemize}
+  \item What to prioritise?
+  \item How to divide up into smaller tasks.
+  \item Daily report or book keeping.
+
+  Google Drive folder to organise reports.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[
+  xlabel=Number of replicas,
+  ylabel={Error (kcal/mol)},
+  ]
+  
+  \addplot table {bootstrap.csv};
+  
+\end{axis}
+\end{tikzpicture}

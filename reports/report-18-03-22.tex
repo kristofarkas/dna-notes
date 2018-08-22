@@ -1,0 +1,52 @@
+\documentclass{article}
+
+\usepackage{booktabs}
+\usepackage{siunitx}
+
+\begin{document}
+
+\section{Response to last weeks debate}
+
+This is from the paper ``Aromatic Base Stacking in DNA: From ab initio Calculations to Molecular Dynamics Simulations.'':
+
+\begin{quotation}
+Base stacking is determined by an interplay of the three most commonly encountered molecular interactions: dispersion attraction, electrostatic interaction, and short-range repulsion. Unusual (aromatic- stacking specific) energy contributions were in fact \textbf{not evidenced} and are not necessary to describe stacking. The currently used simple empirical potential form, relying on atom-centred constant point charges and Lennard-Jones van der Waals terms, \emph{is entirely able} to reproduce the essential features of base stacking. Thus, we can conclude that base stacking is in principle one of the best described interactions in current molecular modelling and it allows to study base stacking in DNA using large-scale classical molecular dynamics simulations.
+\end{quotation}
+
+In short they prove that the interactions present in molecular mechanics force fields suffice to model the pi stacking behaviour in DNA basepair interactions.
+
+\section{Analysing the results: MMPBSA}
+
+I was (finally) able to run the analysis scripts correctly. It took about a day just to debug all the problems in the AmberTools code!, and figure out all the error messages but now it is correctly working. 
+
+\textbf{This means that the I have done a full stack of calculations, end to end, which is a good achievement!}
+
+\section{The one result}
+
+Binding affinity of 9-acridine carbonyl intercalator. I was able to find experimental result for this one result. This is just the start. 
+
+\begin{table}[h]
+  \caption{Results of MMPBSA calculation. Results show moderate agreement with experiment. More data points need to be collected!}
+  \label{tab:res}
+  \begin{tabular}{rrr}
+    \toprule
+    Compound & $\Delta G (kcal/mol)$ & $\Delta G_{exp} (kcal/mol)$ \\
+    \midrule
+    9-AC & \num{10.98(37)} & \num{9.68} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+Experimental results from: https://doi.org/10.1271/bbb.61.1121
+
+\section{Literature}
+
+Current research on DNA intercalation and binding affinity calculation. All papers concentrate heavily on the mechanism, hence umbrella sampling, metadynamics or steered molecular dynamics. Usually only 1 intercalator is investigated in a paper! Experimental comparison is rare. Multiple replicas as used ubiquitously, but no rigours analysis is applied anywhere. There is NO papers of using Markov state models to analyse the kinetics/mechanism of intercalation. 
+
+\section{Experimental results}
+
+I found a couple of papers that have a a set of similar ligand probed for binding affinity measurements. The problem still persists that I need to create a starting structure for the intercalated ligands. 
+
+
+\end{document}

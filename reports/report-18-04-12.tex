@@ -1,0 +1,39 @@
+\documentclass{article}
+
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\begin{document}
+
+Free energy calculation results for a wide range of dna intercalator complexes using ESMACS see table~\ref{tab:esmacs}.
+
+\begin{table}[h!]
+  \caption{Free energy estimates of dna intercalator systems taken from the PDB database}
+  \label{tab:esmacs}
+  
+  \begin{tabular}{lr}
+    \toprule
+    System & $\Delta G_{calc}$ kcal per mol \\
+    \midrule
+    1D11 & \num{-6.2530(11)} \\
+    1D12 & \num{-6.1447(13)} \\
+    1G3X & \num{-9.5204(6)} \\
+    1HX4 & \num{-1.2616(12)} \\
+    1Z3F & \num{-20.2380(8)} \\
+    \bottomrule
+  \end{tabular}
+  
+\end{table}
+
+Drug series to do large scale study using my method:
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.25]{drug-series}
+  \caption{Drug series from experimental study}
+  \label{fig:drug}
+\end{figure}
+
+\end{document}

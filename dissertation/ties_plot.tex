@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+\begin{axis}[
+  ylabel=Predicted $\Delta \Delta G$,
+  xlabel=Experimental $\Delta \Delta G$,
+  ]
+  
+  \addplot[blue, mark=*, only marks] table {ties.csv};
+  
+\end{axis}  
+\end{tikzpicture}

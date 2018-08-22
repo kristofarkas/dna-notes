@@ -1,0 +1,38 @@
+\documentclass{article}
+
+\title{Report}
+\author{}
+
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+  
+\maketitle
+  
+There has been a number of major developments in my research. I can finally say with confidence that setting up a system is done correctly. It has given me a lot of confidence during the last two weeks. I was able to set up \textbf{5} systems from publicly available crystal structures and simulate these to calculate the binding affinity via ESMACS protocol. The five systems are: 1D11, 1H4X, 1D12, 1G3X and 1Z3F. 
+
+I looked at the diversity of crystal structures appearing in papers to simulate intercalators. The results are rather interesting: 50\% of papers used \emph{the same} single structure, 1D11. The rest used structures generated via docking of biased molecular dynamics simulations. This leads me to believe that it is hard to find these initial crystal structures. With my database filtering we have a number of feasible structures, the best five of which I simulated already!
+
+To validate the method, i.e. that the MM simulation is capable of reproducing experimental crystal structures here are RMSD plots compared to the reference structure and equilibration data. See figure~\ref{fig:rmsd}. 
+
+\begin{figure}
+  \includegraphics[scale=0.5]{/Users/kristofarkas/Developer/DNA/1D11-rmsd.png}%
+  \includegraphics[scale=0.5]{/Users/kristofarkas/Developer/DNA/1D12-rmsd.png}
+  \includegraphics[scale=0.5]{/Users/kristofarkas/Developer/DNA/1G3X-rmsd.png}%
+  \includegraphics[scale=0.5]{/Users/kristofarkas/Developer/DNA/1HX4-rmsd.png}
+  \includegraphics[scale=0.5]{/Users/kristofarkas/Developer/DNA/1Z3F-rmsd.png}
+  \caption{RMSD plots}
+  \label{fig:rmsd}
+\end{figure}
+
+A number of observations:
+
+\begin{itemize}
+  \item Some of the structures had intercalators between the last basepairs. This lead to some concern about the stability of the system. Two of the simulations had this setup, and surprisingly they remained stable, i.e. the last base pair did not separate.
+  \item The intercalators are stable at these timescales and stay inside the DNA. 
+  \item DNA with multiple intercalator in crystal structure was able to reform the original DNA form when the molecule is removed and the system is equilibrated. 
+
+\end{itemize}
+  
+\end{document}

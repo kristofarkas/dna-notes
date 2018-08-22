@@ -1,0 +1,151 @@
+\documentclass{article}
+
+\usepackage[margin=2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\DeclareSIUnit{\calorie}{cal}
+
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+
+\title{Probing the free energy landscape of DNA intercalator systems}
+
+\begin{document}
+  
+\maketitle
+
+\section*{Abstract}
+
+\section{Introduction}
+
+% Abbreviations what should be included? FDA?
+
+Small planar molecules have the ability to intercalate between consecutive DNA basepairs altering the structure of DNA locally and at a larger scale. This effect can lead to mutations and the erroneous functioning of the DNA in living organism. Exploiting this effect has lead to a number of drugs and drug candidates due to their anti-cancer effects. FDA approved drugs like <blank> etc. have proven effect in treating some forms of cancer. ~Despite their widespread use, the mechanism of binding has not been completely established.~ \emph{Put something about how there are not enough}. 
+
+It has been shown previously that binding affinity are correlated with the efficacy of a drug molecule (along with other factors like ADME). Binding affinity for protein ligand systems are now calculated routinely both in academia and industry with validation and predictive power. Alchemical free energy methods coupled with accelerated sampling predict the binding affinity of a wide range of protein-ligand systems with accuracies of less then \SI{1}{\kilo\calorie\per\mol} in a consistent manner.
+
+
+
+% Put it in context.
+
+Furthermore DNA-intercalator systems have been probed by computational methods relatively less compared to protein-ligand systems.
+
+% Don't use quinoaline 
+
+% Propuse of thsi paper: three methods used to calualtion
+
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{intercalators.pdf}
+	\caption{A congeneric series of DNA intercalators. All molecules share a common quinoxaline scaffold. ~The experimental study was conducted by \cite{} producing binding affinity values that we could compare our calculations to. (Mention it in the experimental section)~ }
+	\label{fig:intercalators}
+\end{figure}
+
+\section{Methods}
+
+% Models
+
+% We are looking at intercalators that are bound between two consecutive base pairs and not minor or major groove binders.
+
+% Two data-sets: one for validating docking, the other for the free energy calculations methods. 
+
+% Docking
+
+% Give details about parameters, how you define the docking box, etc.
+% What is the direction of the intercalators, conformations, scoring.
+
+% Future work (end of conclusion or discussion or mention it in results when comparing to experiment talking about possibilities why these are the best results. Temperature, concentration, pH, conformation, length of base pair.)
+% Intercalation between other sequences.
+
+\section{Results}
+
+% The title subsections have to have title about what you used the methods for, not what the method is that you used!
+
+
+% Use passive pls. 
+
+In this section we present our results. We start by describing results for each of the approaches we took to estimate the binding affinity, then we compare these relative to each other.
+
+
+\subsection{Docking and scoring}
+
+% Introduce the intercalators
+% Talk about the crystal structures that you found. How, where etc.
+
+% TODO: check what is the nomenclature for a DNA-intercalator system/crystal structure
+
+% Purpose of this section. Why there are nine intercalators here and why are we doing this?
+
+The rigid planar scaffold of the intercalators that bind between DNA basepairs reduces the possible number of conformations that the docked structure can have. We have shown that using an extensive search method for docking, intercalators can be docked with RMSD less than \SI{1}{\angstrom} for a wide range of intercalators compared to crystal structures.
+
+We collected nine crystal structures of DNA-intercalator complex where the intercalator is between two consecutive basepairs. Table~\ref{tab:docking} shows the RMSD of every intercalator docked compared to the crystal structure. For seven of the cases docking is very close to the crystal structure, with average RMSD of \SI{0.76}{\angstrom}. There are two cases where the docked structure is far from the reference.
+
+% 
+
+\begin{table}[h]
+  \caption{Results of docking nine intercalators compared to crystal structures.}
+  \label{tab:docking}
+  \begin{tabular}{lS[round-mode=figures,round-precision=2]}
+  \toprule
+  {PDB ID} & {RMSD [\si{\angstrom}]} \\
+  \midrule
+  1Z3F &  5.527405 \\
+  1Z3F &  0.833399 \\
+  1G3X &  0.593967 \\
+  1HX4 &  1.195613 \\
+  2ROU &  3.920575 \\
+  1D11 &  0.586476 \\
+  1D11 &  0.871855 \\
+  1D12 &  0.401521 \\
+  1D12 &  0.856238 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{ESMACS}
+
+In the past, there has been a number of MMPBSA type calculations for DNA intercalator systems. A large majority of these studies only takes into account just a few (one to three) intercalators binding to the DNA, and does not compare to experimental studies (~for example through displacement assays (move to experimental section, experimental difficulties, why is it hard to measure DNA intercalator biding affinity)~). ~Here we looked at a congeneric series intercalators based on a common quinoxaline scaffold with experimental measurements \cite{}.(Move to methods)~ We obtained a correlation Pearson coefficient of $r_p=0.70$ across the 10 planar molecules for the 3 trajectory calculation.
+
+The experimental free energy values are between \SIlist{-3.69;-3.50}{\kilo\calorie\per\mole}, making them hard to differentiate computationally. Approximate methods, like ESMACS, that are based on MMPBSA and NMODE for the free energy and entropy contribution, respectively do not have the resolution to differentiate experimental values at this scale. Nonetheless, correct error control and ensemble based calculations can give meaningful results relative to each other, i.e. ranking the intercalators based on their free energies will be comparable to experimental ranking.
+
+% In methods talk about 1, 2, 3 trajectory
+
+We have run 1, 2 and 3 trajectory calculations and as seen in Figure~\ref{fig:mmpbsa} the correlation improves, with the 3 trajectory being the most accurate with a correlation coefficient of $r_p=0.70$. The small interval of the experimental values suggests that the intercalators are very closely binding to the DNA. 
+
+% This is a new subsection describing the energy components. P
+% Check the 
+
+The correlation achieved with ESMACS in this study suggests that one of the underlying forces (electrostatic, vdW, or internal energy) dominates the interaction gradient between the intercalators, and that signal is picked up by the MMPBSA calculation. Figure~\ref{fig:corrmat} shows the spread of the free energy values of the different components. Previous studies \cite{} have shown that vdW interactions contribute most to the binding energy of the intercalators in absolute terms. However, the correlation of the different components to the total binding energy shows that the internal energy (the sum of bond, angle, and torsion terms) correlate ~surprisingly~ with the total. 
+% Induce fit, what it is?
+This further supports our claim that the intercalation is an induced fit inside the two base-pairs.
+
+% Methods
+Each ESMACS calculation was run 25 times, the only difference being the random seed at the start of the simulation. 
+
+% Beginning, quality of simulations, 
+Variations in the results from the different replica was used to evaluate the error on the predicted free energy. Figure~\ref{fig:bootstrap} shows the bootstrapped error as a function of the number of replicas. There is a leveling off at around 20 replicas, with 25 replicas showing consistently low error bars.
+
+% Energy contribution section
+NMODE analysis was performed to include an approximation to the entropy contribution. Results show that including NMODE does not improve the ranking. 
+
+% Convergence
+
+The original ESMACS protocol by \cite{} et al. 
+
+\begin{figure}
+	\input{mmpbsa_plot}
+	\caption{Correlation between one (right), two (middle) and three (left) trajectory calculations and experiment. Values are presented for NMODE (red) analysis and without NMODE (blue). The best Pearson correlation is for the NMODE-less values starting from \num{0.64} for the 1, and 2 trajectory and \num{0.70} for the 3 trajectory. The NMODE calculations have a Pearson correlation of \numlist{0.39; 0.5; 0.62} for the 1, 2, and 3 trajectory calculations respectively.}
+	\label{fig:mmpbsa}
+\end{figure}
+
+\subsection{TIES}
+
+
+
+\section{Discussion}
+
+The three methods we investigated correspond to three theoretically more accurate ways of quantifying the relative or absolute binding affinity of these intercalators. 
+
+\section{Conclusion}
+
+\end{document}

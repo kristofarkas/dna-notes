@@ -1,0 +1,30 @@
+\documentclass{article}
+
+\title{Report}
+
+\begin{document}
+
+\maketitle
+
+I have successfully set up the DNA intercalator system for simulation. Next step is to simulate using the below protocol.
+
+I tested and benchmarked OpenMM on BW GPU nodes. I also developed the script to run multiple replicas. This is tested and works efficiently. OpenMM performance is good.
+
+\section{Simulation protocol}
+
+The long range interactions are treated with PME method at a 10 angstrom cutoff distance. The time step of 2 femtoseconds. 25 replicas are run for every simulation. The system is ~20K atoms with benchmarks showing 25 ns/day performance on the BW XK (GPU) nodes.
+
+\begin{enumerate}
+  \item Minimisation: minimise the energy of the system using the built in energy minimiser in OpenMM. The velocities of atoms are randomly assigned from a Boltzmann distribution to 50 K.
+  \item Heating: using the Langevin integrator (thermostat) heat the system from 50 to 300 K in steps of 1 K, each step is run for 100 time steps. At 300 K the system is further equilibrated for 5000 steps.
+  \item Equilibration: using the Langevin integrator (thermostat) and Monte Carlo Barostat at 300 K and 1 bar run the simulation for 2 ns to equilibrate the system in the NPT ensemble.
+  \item Production: using the same settings as for equilibration, trajectory data is collected for 4 ns.
+\end{enumerate}
+
+\section{Status}
+
+The complex system has successfully ran overnight on BW, the other two system (just the DNA, and just the ligand, both solvated) are currently in queue and are expected to finish today. I have two different DNA systems: one of them is the DNA as is from the original crystal structure with the intercalator removed, and the other one is a newly created DNA with the sequence of the structure. In theory the two systems should equilibrate to the same structure.
+
+I will then do the MMPBSA analysis on the three trajectory simulation.
+
+\end{document}

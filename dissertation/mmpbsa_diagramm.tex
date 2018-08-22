@@ -1,0 +1,49 @@
+\begin{tikzpicture}
+  [ 
+  waterbox/.style={rectangle,draw=blue!50,fill=blue!10,thick, inner sep=0pt,minimum size=5*\r},
+  dna/.style={ultra thick, line cap=round},
+  intercalator/.style={dna, dna, line width=3pt, blue},
+  pre/.style={<-,shorten <=1pt,shorten >=1pt,semithick}, 
+  post/.style={->,shorten <=1pt,shorten >=1pt,semithick}
+  ]
+  
+  \node[waterbox] (a)               {};
+  \node[waterbox] (b)  [right=of a] {}
+    edge [pre] node[auto, swap] {$\Delta G_\text{b}^{aq}$} (a);
+  \node[waterbox, fill=white] (a') [below=of a] {}
+    edge [post] node[auto] {$\Delta G_\text{intercalator}^{sol}$} (a);
+  \node[waterbox, fill=white] (b') [below=of b] {}
+    edge [pre] node[auto] {$\Delta G_\text{b}^{vac}$} (a')
+    edge [post] node[auto] {$\Delta G_\text{complex}^{sol}$} (b);
+  \node[waterbox] (c)  [left=of a] {};
+  \node[waterbox, fill=white] (c') [left=of a'] {}
+    edge [post] node[auto] {$\Delta G_\text{dna}^{sol}$} (c);
+    
+  \node at ($(c.center)!0.5!(a.center)$) {+};
+  \node at ($(c'.center)!0.5!(a'.center)$) {+};
+  
+  % \node[text width=10cm, align=center] [above=of a] {Thermodynamic cycle used to indirectly calculate the absolute free energy of intercalation};
+  
+  
+  \foreach \x in {b.center, b'.center, c.center, c'.center} {
+    \draw[dna]
+      (\x) [rounded corners=\r] -- ++(-\s, 0) -- ++(0, 2*\s) 
+      (\x) [rounded corners=\r] -- ++( \s, 0) -- ++(0, 2*\s)
+      (\x) [rounded corners=\r] -- ++(-\s, 0) -- ++(0,-2*\s)
+      (\x) [rounded corners=\r] -- ++( \s, 0) -- ++(0,-2*\s)
+      
+      (\x) ++(-0.866*\s,  0.5*\s) -- ++(1.73205*\s, 0)
+      (\x) ++(   -\s,      \s) -- ++(   2*\s, 0)
+      (\x) ++(   -\s,  1.5*\s) -- ++(   2*\s, 0)
+      
+      (\x) ++(-0.866*\s,  -0.5*\s) -- ++(1.73205*\s, 0)
+      (\x) ++(      -\s,      -\s) -- ++(      2*\s, 0)
+      (\x) ++(      -\s,  -1.5*\s) -- ++(      2*\s, 0);
+  }
+  
+  \draw[intercalator] (a.center)  ++(-0.8*\s, 1.25*\s) -- ++(1.6*\s, 0);
+  \draw[intercalator] (b.center)  ++(-0.8*\s, 1.25*\s) -- ++(1.6*\s, 0);
+  \draw[intercalator] (a'.center) ++(-0.8*\s, 1.25*\s) -- ++(1.6*\s, 0);
+  \draw[intercalator] (b'.center) ++(-0.8*\s, 1.25*\s) -- ++(1.6*\s, 0);
+
+\end{tikzpicture}

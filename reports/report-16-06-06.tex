@@ -1,0 +1,21 @@
+\documentclass{article}
+
+\usepackage{siunitx}
+
+\begin{document}
+  
+\section{Free energy protocol}
+
+The first attempt at calculating the binding free energy of the congeneric series of intercalators to a double stranded DNA was with the ESMACS protocol. ESMACS uses enhances sampling and MMPBSA method to estimate the free energy change due to the ligand intercalating between two consecutive basepairs.
+
+We ran simulations of the complex, intercalator and receptor. 25 replicas of each system to correctly capture the error in the free energy estimate. We also included the entropy contribution via variational entropy. 
+
+\section{Simulation protocol}
+
+All simulations of the system were done using OpenMM version 7.2 on Nvidia K20X GPUs. The Langevin integrator was set to 300K and the pressure was set to 1 atmosphere. Long range electrostatics were calculated using PME with a \SI{10}{\angstrom} cutoff and \SI{9}{\angstrom} switching distance. All simulations were performed in a periodic box with a \SI{2}{\femto\second} timestep.
+
+\section{DNA intercalator system}
+
+The initial structure of the system was taken from the PDB with id \emph{1Z3F}. The 6 basepair structure had two intercalators at either end of an anticancer drug ellipticine. The congeneric series of ligands experimentally probed by Shibinskaya et. al. have a very similar 4 ring system core to ellipticine. Using \texttt{RDkit} we generated the 20 ligands and aligned them to one of the ellipticine intercalators in the crystal structure. The new structures were equilibrated to accomdate the intercalators inside the basepairs. 
+  
+\end{document}
