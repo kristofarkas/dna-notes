@@ -1,58 +1,9 @@
 \chapter{Results and discussion}
 
-% \section{Introduction}
-
-% Abbreviations what should be included? FDA?
-
-% Small planar molecules have the ability to intercalate between consecutive DNA basepairs altering the structure of DNA locally and at a larger scale. This effect can lead to mutations and the erroneous functioning of the DNA in living organism. Exploiting this effect has lead to a number of drugs and drug candidates due to their anti-cancer effects. FDA approved drugs like <blank> etc. have proven effect in treating some forms of cancer. ~Despite their widespread use, the mechanism of binding has not been completely established.~ \emph{Put something about how there are not enough}. 
-% 
-% It has been shown previously that binding affinity are correlated with the efficacy of a drug molecule (along with other factors like ADME). Binding affinity for protein ligand systems are now calculated routinely both in academia and industry with validation and predictive power. Alchemical free energy methods coupled with accelerated sampling predict the binding affinity of a wide range of protein-ligand systems with accuracies of less then \SI{1}{\kilo\calorie\per\mol} in a consistent manner.
-
-
-
-% Put it in context.
-
-% Furthermore DNA-intercalator systems have been probed by computational methods relatively less compared to protein-ligand systems.
-
-% Don't use quinoaline 
-
-% Propuse of thsi paper: three methods used to calualtion
-
-
-% \section{Methods}
-
-% Models
-
-% We are looking at intercalators that are bound between two consecutive base pairs and not minor or major groove binders.
-
-% Two data-sets: one for validating docking, the other for the free energy calculations methods. 
-
-% Docking
-
-% Give details about parameters, how you define the docking box, etc.
-% What is the direction of the intercalators, conformations, scoring.
-
-% Future work (end of conclusion or discussion or mention it in results when comparing to experiment talking about possibilities why these are the best results. Temperature, concentration, pH, conformation, length of base pair.)
-% Intercalation between other sequences.
-
-% \section{Results}
-
-% The title subsections have to have title about what you used the methods for, not what the method is that you used!
-
-
-% Use passive pls. 
-
 This chapter describes and discusses the results. The results for each of the computational approaches to estimate either the binding free energy directly or range the intercalators is presented first, followed by a discussion of their relative merits.
 
 
 \section{Docking and scoring}
-
-% Introduce the intercalators
-% Talk about the crystal structures that you found. How, where etc.
-
-% TODO: check what is the nomenclature for a DNA-intercalator system/crystal structure
-
-% Purpose of this section. Why there are nine intercalators here and why are we doing this?
 
 The rigid planar scaffold of the intercalators that bind between DNA basepairs reduces the possible number of conformations that the docked structure can have. We have shown that using an extensive search method for docking, intercalators can be docked with RMSD less than $1$ angstrom for a wide range of intercalators compared to crystal structures.
 
@@ -60,11 +11,8 @@ We collected nine crystal structures of DNA-intercalator complex where the inter
 
 After further investigating the outlier, the docked intercalators are in the correct place between the two basepairs, but their orientation is different from the one in the reference crystal structure. If there is no symmetry present in the intercalator molecule, then there are four possible orientations once docked. The free energy difference between these orientations is probably low, and the experimentally observed, dominant orientation is dependent of the kinetics of the intercalation too.
 
-The quinoxaline scaffold based intercalators were also docked and scored into the basepair opening of the 1Z3F crystal structure removing the original intercalated molecules. 
-
-% 
-\begin{table}[h]
-  \caption{Results of docking nine intercalators compared to crystal structures.}
+\begin{table}
+  \caption{Results of docking nine intercalators compared to crystal structures We look at the root mean squared deviation of the heavy atoms from the reference positions in the PDB database.}
   \label{tab:docking}
   \centering
   \begin{tabular}{lS[round-mode=figures,round-precision=2]}
@@ -85,13 +33,15 @@ The quinoxaline scaffold based intercalators were also docked and scored into th
 \end{table}
 
 
+The quinoxaline scaffold based intercalators were also docked and scored into the basepair opening of the 1Z3F crystal structure removing the original intercalated molecules.  
+
+\begin{figure}
+  \includegraphics[width=\columnwidth]{docking}
+  \caption{Plot of scores from docking the intercalators to the 1Z3F crystal structure. The ranking inside the 4 and 5 ring scaffold is poor, but there is a clear separation between the two intercalator types. This is in line with what we expect from the scoring method.}
+  \label{fig:docking}
+\end{figure}
+
 \input{results_esmacs}
 
 \input{results_ties}
-
-
-
-\section{Discussion}
-
-The three methods we investigated correspond to three theoretically more accurate ways of quantifying the relative or absolute binding affinity of these intercalators. 
 

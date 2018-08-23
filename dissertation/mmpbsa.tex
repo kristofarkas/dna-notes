@@ -1,9 +1,10 @@
-\section{Molecular Mechanics Poisson-Boltzmann Surface Area}
+\subsection{MMPBSA}
 
-Molecular Mechanics Poisson-Boltzmann Surface Area (MMPBSA) is one of the theoretically approximate methods to calculate the free energy of system. It is the most accurate of the approximate methods, and it has previously been applied successfully to the free energy calculation of various biological systems including protein-ligand and DNA intercalator complexes. 
+Molecular Mechanics Poisson-Boltzmann Surface Area (MMPBSA) is one of the theoretically approximate methods to calculate the free energy of system \cite{gilson2007calculation, steinbrecher2010towards}. It is the most accurate of the approximate methods, and it has previously been applied successfully to the free energy calculation of various biological systems including protein-ligand and DNA intercalator complexes.
+
 This method is a good choice for comparing and ranking a set of molecule by their binding affinities for two main reasons: MMPBSA is able to handle a wide variety of systems and can the results can be theoretically calculated from a a single trajectory, unlike theoretically exact alchemical methods like FEP or TI. 
 
-MMPBSA has become the a popular method to calculate binding affinities because of a balance between the details included in the physical model and the speed of the calculations themselves. As one of the main methods used in this thesis to calculate DNA-intercalator interactions, it will be discussed in more detail.
+MMPBSA has become the a popular method to calculate binding affinities because of a balance between the details included in the physical model and the speed of the calculations themselves \cite{kollman2000calculating, sitkoff1994accurate}. As one of the main methods used in this thesis to calculate DNA-intercalator interactions, it will be discussed in more detail.
 
 Applying the MMPBSA method to a system involves calculating the absolute free energy of binding by calculating three separate components: the free energies of the DNA-intercalator complex, the DNA and the intercalator molecules alone. The change is free energy upon intercalation then is
 
@@ -15,16 +16,16 @@ Applying the MMPBSA method to a system involves calculating the absolute free en
 where $\langle \dots \rangle$ represent the average value of a post-processing calculation performed on every frame of the simulation trajectory. Simulations are performed in explicit solvent and with counter-ions to balance the charge in the periodic simulation box.
 To aid faster convergence of the free energy values the MMPBSA methods employs two strategies: first, all solvent molecules and counter-ions are replaced from the trajectory post simulation but pre-analysis by a continuum solvent approximation, and a thermodynamic cycle is used.
 
-\subsection{The thermodynamic cycle}
+\subsubsection{The thermodynamic cycle}
 
 \begin{figure}
   \centering
   \input{mmpbsa_diagramm}
-  \caption{Thermodynamic cycle}
+  \caption{A solvation thermodynamic cycle is used to indirectly calculate the absolute binding free energy, $\Delta G_{b}^{aq}$, of an intercalator to the DNA in solvent. The rest of the free energy changes are calculated or estimated to then compute free energy of intercalation.}
   \label{fig:mmpbsacycle}
 \end{figure}
 
 
-\subsection{Single and Component trajectories}
+\subsubsection{Single and Component trajectories}
 
-The different contributions in equation \ref{eq:mmpbsa} can be extracted from a single trajectory of the complex, or from separate trajectories of the DNA, intercalator and complex. If a single trajectory is used, then the during the calculation of the different component, the rest of the system is removed and the analysis is done on part of the trajectory. This approach is effective in most scenarios and saves the additional cost of running multiple simulations for the separate components. The other advantage of the single trajectory approach is that part of the complex that do not affect the intercalation cancel out exactly, as the coordinates are taken from the same trajectory, hence they are exactly the same. If separate trajectories are run for each component, than this error cancellation does not occur, as the component are free to explore different conformations. On the other hand, a single trajectory will not be able to capture dynamical changes to either the intercalator or, more importantly to the DNA, upon intercalation, and will consequently ignore certain contributions to the binding free energy. In the rest of the thesis, the three possible trajectory approaches are termed 1, 2 and 3 trajectory, corresponding to MMPBSA calculations where all three components are from the same simulation (1 trajectory), the intercalator is from a separate simulation (2 trajectory), or all three components, including the DNA are from three separate simulations (3 trajectory). 
+The different contributions in equation \ref{eq:mmpbsa} can be extracted from a single trajectory of the complex, or from separate trajectories of the DNA, intercalator and complex. If a single trajectory is used, then the during the calculation of the different component, the rest of the system is removed and the analysis is done on part of the trajectory. This approach is effective in most scenarios and saves the additional cost of running multiple simulations for the separate components\cite{foloppe2006towards, wang2001use}. The other advantage of the single trajectory approach is that part of the complex that do not affect the intercalation cancel out exactly, as the coordinates are taken from the same trajectory, hence they are exactly the same. If separate trajectories are run for each component, than this error cancellation does not occur, as the component are free to explore different conformations. On the other hand, a single trajectory will not be able to capture dynamical changes to either the intercalator or, more importantly to the DNA, upon intercalation, and will consequently ignore certain contributions to the binding free energy. In the rest of the thesis, the three possible trajectory approaches are termed 1, 2 and 3 trajectory, corresponding to MMPBSA calculations where all three components are from the same simulation (1 trajectory), the intercalator is from a separate simulation (2 trajectory), or all three components, including the DNA are from three separate simulations (3 trajectory). 

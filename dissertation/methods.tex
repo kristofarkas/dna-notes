@@ -1,27 +1,48 @@
 \chapter{Methods}
 
-\section{Experimental measurements of intercalation}
+\section{DNA intercalator models}
 
 % talk about the crystal structure and the experimental values in the other paper.
+All systems that were simulated in this thesis started out from an x-ray crystal structure model. The nucleic acid database \cite{berman1992nucleic} contains 402 structures that are tagged as drug-DNA complexes. Just a few of these are high quality intercalated structures. After careful manual filtering and investigation we selected a set of 10 crystal structures to conduct docking and free energy calculation studies with.
 
-(~for example through displacement assays (move to experimental section, experimental difficulties, why is it hard to measure DNA intercalator biding affinity)~). ~Here we looked at a congeneric series intercalators based on a common quinoxaline scaffold with experimental measurements \cite{}.(Move to methods)~
+The experimental data for the binding affinity of a molecules was from an experimental study done by Shibinskaya et al.\cite{shibinskaya2011synthesis}. The intercalators probed experimentally there were a congeneric series of molecules based on a common quinoxaline scaffold. To prepare this system in silico, we compared the molecule with the intercalators found in the crystal structures from the nucleic acid database. The crystal structure with ID 1Z3F had an intercalator with a very similar scaffold to quinoxaline, therefore is was chosen as the base of our model.
 
-\begin{figure}[h]
-	\includegraphics[width=\textwidth]{intercalators.pdf}
-	\caption{A congeneric series of DNA intercalators. All molecules share a common quinoxaline scaffold. ~The experimental study was conducted by \cite{} producing binding affinity values that we could compare our calculations to. (Mention it in the experimental section)~ }
+First the original intercalator was removed from the model, leaving just the DNA double stranded helix with an opening between two of the consecutive basepairs where the molecule was intercalating. Then we docked in the new intercalators with the OpenEye OEDocking toolkit \cite{kelley2015posit}. The docking method that we used was extensively validated, and we believed that the resulting model was a good starting point for the free energy calculations.    
+
+\begin{figure}
+  \centering
+  \subfloat[1Z3F] {\includegraphics[scale=0.2]{1z3f}}%
+  \subfloat[1G3X] {\includegraphics[scale=0.2]{1g3x}}%
+	\subfloat[1HX4] {\includegraphics[scale=0.2]{1hx4}}
+	
+	\subfloat[2ROU] {\includegraphics[scale=0.2]{2rou}}%
+	\subfloat[1D11] {\includegraphics[scale=0.2]{1d11}}%
+	\subfloat[1D12] {\includegraphics[scale=0.2]{1d12}}%
+	
+  \caption{Examples of the crystal structures found in the nucleic acid database. They all contain intercalators (one or two) somewhere in-between two basepairs. Structure with ID 1Z3F was used to as the starting point for modelling the experimentally found system in the simulations.}
+  \label{}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\subfloat[4 ring scaffold] {\includegraphics[scale=0.4]{interc1.pdf}}%
+	\subfloat[5 ring scaffold] {\includegraphics[scale=0.4]{interc2.pdf}}
+	
+	\subfloat[Side chains] {\includegraphics[width=\textwidth]{intercalators.pdf}}
+	
+	\caption{A congeneric series of DNA intercalators. All molecules share a common quinoxaline scaffold with both the 4 and 5 ring scaffold probed experimentally.}
 	\label{fig:intercalators}
 \end{figure}
 
+The intercalators were generated from SMILES strings using OpenEye toolkit \cite{hawkins2010conformer}. First up to 1000 different conformations were generated with OEOmega with a maximum root mean square deviation of 2 angstrom. Then AM1BCC charges were assigned to them electronically least interacting functional groups method to select preferred conformers.
 
 \section{Docking and scoring}
 
-For certain application, like that of high throughput screening in the pharmaceutical industry, it is important to assess the binding strenght of a large number of drugs or molecules bound to large biological macromolecules like proteins or DNA in a very fast manner. This is done via easily evalutable scoring function, some notable examples including: AutoDock, X-Score, DrugScore, ChemScore, GOLD, FlexX, LigScore and LUDI. Generally speaking, they take into account a single structure and little or no protein movement is taking into account during evaluation. One of the simplest scoring function  consists of the empirical surface-area based method that shows that ligand binding reduces the surface are in the receptor that is accessible to the surrounding solvent. The function makes the assumption that the polar and non-polar area on the surface of the molecule has a linear relation to the free energy. Due to the crude simplifications in these models, they have weak predictive power and are rarely used for accurate free energy estimation. Here, a scoring methods is used for two reasons: (i) to find an initial structure for the intercalator-DNA complex, and (ii) to compare the scores and hence the ranking of this methods with other, more accurate models. Docking and scoring has its place in the drug discovery pipeline. In high throughput scenarios, where speed is an important factor due to the large number of molecules that need to be tested, scoring functions are often used to filter out candidates that have low probability of being good binders.
+For certain application, like that of high throughput screening in the pharmaceutical industry, it is important to assess the binding strenght of a large number of drugs or molecules bound to large biological macromolecules like proteins or DNA in a very fast manner. This is done via easily evalutable scoring function, some notable examples including: AutoDock \cite{trott2010autodock}, X-Score \cite{wang2002further}, ChemScore \cite{eldridge1997empirical}, and others. Generally speaking, they take into account a single structure and little or no protein movement is taking into account during evaluation. One of the simplest scoring function  consists of the empirical surface-area based method that shows that ligand binding reduces the surface are in the receptor that is accessible to the surrounding solvent. The function makes the assumption that the polar and non-polar area on the surface of the molecule has a linear relation to the free energy. Due to the crude simplifications in these models, they have weak predictive power and are rarely used for accurate free energy estimation. Here, a scoring methods is used for two reasons: (i) to find an initial structure for the intercalator-DNA complex, and (ii) to compare the scores and hence the ranking of this methods with other, more accurate models. Docking and scoring has its place in the drug discovery pipeline. In high throughput scenarios, where speed is an important factor due to the large number of molecules that need to be tested, scoring functions are often used to filter out candidates that have low probability of being good binders \cite{mobley2009binding}.
 
-\subsection{Starting structures for docking}
+In this thesis we used the ChemScore scoring function as implemented in OpenEye OEDocking toolkit. We always ran an exhaustive docking search with all the generated conformations of the intercalators as possible good fits. Docking was restricted to a large box around the two consecutive base pairs with additional padding to fit in any molecule side chains if present. 
 
-
-
-\input{mmpbsa}
+\input{esmacs}
 
 \input{ties}
 

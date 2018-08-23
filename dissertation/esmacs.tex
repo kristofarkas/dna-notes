@@ -1,0 +1,10 @@
+
+\section{ESMACS}
+
+The molecular dynamics package OpenMM \cite{eastman2017openmm} was used throughout the minimisation, equilibration and production phases of the simulations. The minimisation phase was conduced using the conjugate gradient algorithm in OpenMM for 1000 iterations.
+
+Non-bonded interactions were cut off at 12 angstrom and long range Coulomb interactions were handled using the Particle Mesh Ewald (PME) method. In order to obtain an integration timestep of 2 fs the settle \cite{miyamoto1992settle} algorithm was applied to all atoms covalently bonded to hydrogen atoms in both the equilibration and production simulations.
+
+During equilibration the system was maintained at 300 K and 1 atm using the Langevin thermostat and Monte Carlo Barostat implemented in OpenMM with default settings. This resulted in the system sampling an isothermal isobaric (NPT) ensemble. Equilibration was done for 4 ns.
+
+The equilibrated systems were kept in the same isothermal isobaric ensemble as the final state of the equilibration. All ensemble simulation were run for 16 ns simulation time. In total we ran each protocol for 25 replicas.

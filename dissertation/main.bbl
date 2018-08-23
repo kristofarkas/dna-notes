@@ -1,0 +1,283 @@
+\begin{thebibliography}{10}
+
+\bibitem{adkins1983equilibrium}
+Clement~John Adkins and Clement~John Adkins.
+\newblock {\em Equilibrium thermodynamics}.
+\newblock Cambridge University Press, 1983.
+
+\bibitem{allen2017computer}
+Michael~P Allen and Dominic~J Tildesley.
+\newblock {\em Computer simulation of liquids}.
+\newblock Oxford university press, 2017.
+
+\bibitem{arnott1973refinement}
+Struther Arnott and DWL Hukins.
+\newblock Refinement of the structure of b-dna and implications for the
+  analysis of x-ray diffraction data from fibers of biopolymers.
+\newblock {\em Journal of molecular biology}, 81(2):93--105, 1973.
+
+\bibitem{bai2012cryo}
+Xiao-chen Bai, Thomas~G Martin, Sjors~HW Scheres, and Hendrik Dietz.
+\newblock Cryo-em structure of a 3d dna-origami object.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  109(49):20012--20017, 2012.
+
+\bibitem{power-of-many17}
+Vivek Balasubramanian, Matteo Turilli, Weiming Hu, Matthieu Lefebvre, Wenjie
+  Lei, Guido Cervone, Jeroen Tromp, and Shantenu Jha.
+\newblock {Harnessing the Power of Many: Extensible Toolkit for Scalable
+  Ensemble Applications}.
+\newblock {\em International Proceedings of the 32nd International Conference
+  on Parallel Processing (IPDPS)}, 2018.
+
+\bibitem{berg2002biochemistry}
+Jeremy~M Berg, John~L Tymoczko, Lubert Stryer, JM~Berg, JL~Tymoczko, and
+  L~Stryer.
+\newblock Biochemistry: International version (hardcover), 2002.
+
+\bibitem{berman1992nucleic}
+Helen~M Berman, Wilma~K Olson, David~L Beveridge, John Westbrook, Anke Gelbin,
+  Tamas Demeny, Shu-Hsin Hsieh, AR~Srinivasan, and Bohdan Schneider.
+\newblock The nucleic acid database. a comprehensive relational database of
+  three-dimensional structures of nucleic acids.
+\newblock {\em Biophysical journal}, 63(3):751, 1992.
+
+\bibitem{branden1999introduction}
+Carl~Ivar Branden et~al.
+\newblock {\em Introduction to protein structure}.
+\newblock Garland Science, 1999.
+
+\bibitem{cheatham1995molecular}
+TE~III Cheatham, JL~Miller, T~Fox, TA~Darden, and PA~Kollman.
+\newblock Molecular dynamics simulations on solvated biomolecular systems: the
+  particle mesh ewald method leads to stable trajectories of dna, rna, and
+  proteins.
+\newblock {\em Journal of the American Chemical Society}, 117(14):4193--4194,
+  1995.
+
+\bibitem{chipot2002free}
+Christophe Chipot and David~A Pearlman.
+\newblock Free energy calculations. the long and winding gilded road.
+\newblock {\em Molecular Simulation}, 28(1-2):1--12, 2002.
+
+\bibitem{chipot2007free}
+Christophe Chipot and Andrew Pohorille.
+\newblock {\em Free energy calculations}.
+\newblock Springer, 2007.
+
+\bibitem{ambertools18}
+S.R. Brozell D.S. Cerutti T.E. Cheatham III V.W.D. Cruzeiro T.A. Darden R.E.
+  Duke D. Ghoreishi M.K. Gilson H. Gohlke A.W. Goetz D. Greene R Harris N.
+  Homeyer S. Izadi A. Kovalenko T. Kurtzman T.S. Lee S. LeGrand P. Li C. Lin J.
+  Liu T. Luchko R. Luo D.J. Mermelstein K.M. Merz Y. Miao G. Monard C. Nguyen
+  H. Nguyen I. Omelyan A. Onufriev F. Pan R. Qi D.R. Roe A. Roitberg C. Sagui
+  S. Schott-Verdugo J. Shen C.L. Simmerling J. Smith R. Salomon-Ferrer J.
+  Swails R.C. Walker J. Wang H. Wei R.M. Wolf X. Wu L. Xiao D.M.~York
+  D.A.~Case, I.Y. Ben-Shalom and P.A. Kollman.
+\newblock Amber 2018.
+\newblock 2018.
+
+\bibitem{deng2009computations}
+Yuqing Deng and Beno{\^\i}t Roux.
+\newblock Computations of standard binding free energies with molecular
+  dynamics simulations.
+\newblock {\em The Journal of Physical Chemistry B}, 113(8):2234--2246, 2009.
+
+\bibitem{eastman2017openmm}
+Peter Eastman, Jason Swails, John~D Chodera, Robert~T McGibbon, Yutong Zhao,
+  Kyle~A Beauchamp, Lee-Ping Wang, Andrew~C Simmonett, Matthew~P Harrigan,
+  Chaya~D Stern, et~al.
+\newblock Openmm 7: Rapid development of high performance algorithms for
+  molecular dynamics.
+\newblock {\em PLoS computational biology}, 13(7):e1005659, 2017.
+
+\bibitem{eldridge1997empirical}
+Matthew~D Eldridge, Christopher~W Murray, Timothy~R Auton, Gaia~V Paolini, and
+  Roger~P Mee.
+\newblock Empirical scoring functions: I. the development of a fast empirical
+  scoring function to estimate the binding affinity of ligands in receptor
+  complexes.
+\newblock {\em Journal of computer-aided molecular design}, 11(5):425--445,
+  1997.
+
+\bibitem{foloppe2006towards}
+N~Foloppe and R~Hubbard.
+\newblock Towards predictive ligand design with free-energy based computational
+  methods?
+\newblock {\em Current medicinal chemistry}, 13(29):3583--3608, 2006.
+
+\bibitem{frenkel2001understanding}
+Daan Frenkel and Berend Smit.
+\newblock {\em Understanding molecular simulation: from algorithms to
+  applications}, volume~1.
+\newblock Elsevier, 2001.
+
+\bibitem{galindo2017computational}
+Rodrigo Galindo-Murillo and Thomas~E Cheatham~III.
+\newblock Computational dna binding studies of (--)-epigallocatechin-3-gallate.
+\newblock {\em Journal of Biomolecular Structure and Dynamics}, pages 1--13,
+  2017.
+
+\bibitem{dnaforcefieldcomp}
+Rodrigo Galindo-Murillo, James~C. Robertson, Marie Zgarbova, Jiaa poner, Michal
+  Otyepka, Petr Jureaka, and Thomas~E. Cheatham.
+\newblock Assessing the current state of amber force field modifications for
+  dna.
+\newblock {\em Journal of Chemical Theory and Computation}, 12(8):4114--4127,
+  2016.
+
+\bibitem{gilson2007calculation}
+Michael~K Gilson and Huan-Xiang Zhou.
+\newblock Calculation of protein-ligand binding affinities.
+\newblock {\em Annual review of biophysics and biomolecular structure}, 36,
+  2007.
+
+\bibitem{hawkins2010conformer}
+Paul~CD Hawkins, A~Geoffrey Skillman, Gregory~L Warren, Benjamin~A Ellingson,
+  and Matthew~T Stahl.
+\newblock Conformer generation with omega: algorithm and validation using high
+  quality structures from the protein databank and cambridge structural
+  database.
+\newblock {\em Journal of chemical information and modeling}, 50(4):572--584,
+  2010.
+
+\bibitem{hunenberger2005thermostat}
+Philippe~H H{\"u}nenberger.
+\newblock Thermostat algorithms for molecular dynamics simulations.
+\newblock In {\em Advanced computer simulation}, pages 105--149. Springer,
+  2005.
+
+\bibitem{ivani2016parmbsc1}
+Ivan Ivani, Pablo~D Dans, Agnes Noy, Alberto P{\'e}rez, Ignacio Faustino, Adam
+  Hospital, J{\"u}rgen Walther, Pau Andrio, Ramon Go{\~n}i, Alexandra
+  Balaceanu, et~al.
+\newblock Parmbsc1: a refined force field for dna simulations.
+\newblock {\em Nature methods}, 13(1):55, 2016.
+
+\bibitem{jakalian2002fast}
+Araz Jakalian, David~B Jack, and Christopher~I Bayly.
+\newblock Fast, efficient generation of high-quality atomic charges. am1-bcc
+  model: Ii. parameterization and validation.
+\newblock {\em Journal of computational chemistry}, 23(16):1623--1641, 2002.
+
+\bibitem{review_bb_2016}
+Shantenu Jha and Matteo Turilli.
+\newblock A building blocks approach towards domain specific workflow systems?,
+  2017.
+\newblock (under review).
+
+\bibitem{kelley2015posit}
+Brian~P Kelley, Scott~P Brown, Gregory~L Warren, and Steven~W Muchmore.
+\newblock Posit: flexible shape-guided docking for pose prediction.
+\newblock {\em Journal of chemical information and modeling}, 55(8):1771--1780,
+  2015.
+
+\bibitem{kollman2000calculating}
+Peter~A Kollman, Irina Massova, Carolina Reyes, Bernd Kuhn, Shuanghong Huo,
+  Lillian Chong, Matthew Lee, Taisung Lee, Yong Duan, Wei Wang, et~al.
+\newblock Calculating structures and free energies of complex molecules:
+  combining molecular mechanics and continuum models.
+\newblock {\em Accounts of chemical research}, 33(12):889--897, 2000.
+
+\bibitem{leach2001molecular}
+Andrew~R Leach.
+\newblock {\em Molecular modelling: principles and applications}.
+\newblock Pearson education, 2001.
+
+\bibitem{macke1961ld}
+W~Macke.
+\newblock Ld landau and em lifshitz mechanics. vol. 1 of: Course of theoretical
+  physics. 165 s. m. 55 abb. oxford/london/paris 1960. pergamon press ltd.
+  preis geb. 40 s. net.
+\newblock {\em ZAMM-Journal of Applied Mathematics and Mechanics/Zeitschrift
+  f{\"u}r Angewandte Mathematik und Mechanik}, 41(9):392--392, 1961.
+
+\bibitem{miyamoto1992settle}
+Shuichi Miyamoto and Peter~A Kollman.
+\newblock Settle: An analytical version of the shake and rattle algorithm for
+  rigid water models.
+\newblock {\em Journal of computational chemistry}, 13(8):952--962, 1992.
+
+\bibitem{mobley2009binding}
+David~L Mobley and Ken~A Dill.
+\newblock Binding of small-molecule ligands to proteins:“what you see” is
+  not always “what you get”.
+\newblock {\em Structure}, 17(4):489--498, 2009.
+
+\bibitem{shibinskaya2011synthesis}
+Marina~O Shibinskaya, Alexander~S Karpenko, Sergey~A Lyakhov, Sergey~A
+  Andronati, Nadezhda~M Zholobak, Nikolay~Ya Spivak, Natalia~A Samochina, Lev~M
+  Shafran, Mykhail~Ju Zubritsky, and Valerij~F Galat.
+\newblock Synthesis and biological activity of 7h-benzo [4, 5] indolo [2,
+  3-b]-quinoxaline derivatives.
+\newblock {\em European journal of medicinal chemistry}, 46(2):794--798, 2011.
+
+\bibitem{sitkoff1994accurate}
+Doree Sitkoff, Kim~A Sharp, and Barry Honig.
+\newblock Accurate calculation of hydration free energies using macroscopic
+  solvent models.
+\newblock {\em The Journal of Physical Chemistry}, 98(7):1978--1988, 1994.
+
+\bibitem{vsponer1996hydrogen}
+Ji{\v{r}}{\'\i} {\v{S}}poner, Jerzy Leszczynski, and Pavel Hobza.
+\newblock Hydrogen bonding and stacking of dna bases: a review of
+  quantum-chemical ab initio studies.
+\newblock {\em Journal of Biomolecular structure and Dynamics}, 14(1):117--135,
+  1996.
+
+\bibitem{steinbrecher2010towards}
+Thomas Steinbrecher and Andreas Labahn.
+\newblock Towards accurate free energy calculations in ligand protein-binding
+  studies.
+\newblock {\em Current medicinal chemistry}, 17(8):767--785, 2010.
+
+\bibitem{trott2010autodock}
+Oleg Trott and Arthur~J Olson.
+\newblock Autodock vina: improving the speed and accuracy of docking with a new
+  scoring function, efficient optimization, and multithreading.
+\newblock {\em Journal of computational chemistry}, 31(2):455--461, 2010.
+
+\bibitem{tuckerman2010statistical}
+Mark Tuckerman.
+\newblock {\em Statistical mechanics: theory and molecular simulation}.
+\newblock Oxford university press, 2010.
+
+\bibitem{tuckerman1992reversible}
+MBBJM Tuckerman, Bruce~J Berne, and Glenn~J Martyna.
+\newblock Reversible multiple time scale molecular dynamics.
+\newblock {\em The Journal of chemical physics}, 97(3):1990--2001, 1992.
+
+\bibitem{wang2001use}
+Junmei Wang, Paul Morin, Wei Wang, and Peter~A Kollman.
+\newblock Use of mm-pbsa in reproducing the binding free energies to hiv-1 rt
+  of tibo derivatives and predicting the binding mode to hiv-1 rt of efavirenz
+  by docking and mm-pbsa.
+\newblock {\em Journal of the American Chemical Society}, 123(22):5221--5230,
+  2001.
+
+\bibitem{wang2004development}
+Junmei Wang, Romain~M Wolf, James~W Caldwell, Peter~A Kollman, and David~A
+  Case.
+\newblock Development and testing of a general amber force field.
+\newblock {\em Journal of computational chemistry}, 25(9):1157--1174, 2004.
+
+\bibitem{wang2002further}
+Renxiao Wang, Luhua Lai, and Shaomeng Wang.
+\newblock Further development and validation of empirical scoring functions for
+  structure-based binding affinity prediction.
+\newblock {\em Journal of computer-aided molecular design}, 16(1):11--26, 2002.
+
+\bibitem{zgarbova2015refinement}
+Marie Zgarbov{\'a}, Jiri Sponer, Michal Otyepka, Thomas~E Cheatham~III, Rodrigo
+  Galindo-Murillo, and Petr Jurecka.
+\newblock Refinement of the sugar--phosphate backbone torsion beta for amber
+  force fields improves the description of z-and b-dna.
+\newblock {\em Journal of chemical theory and computation}, 11(12):5723--5736,
+  2015.
+
+\bibitem{zuckerman2010statistical}
+Daniel~M Zuckerman.
+\newblock {\em Statistical physics of biomolecules: an introduction}.
+\newblock CRC Press, 2010.
+
+\end{thebibliography}
