@@ -1,0 +1,48 @@
+\subsection{ESMACS}
+
+In the past, there has been a number of MMPBSA type calculations for DNA intercalator systems. A large majority of these studies only takes into account just a few (one to three) intercalators binding to the DNA, and does not compare to experimental studies. We obtained a correlation Pearson coefficient of $r_p=0.70$ across the 10 planar molecules for the 3 trajectory calculation.
+
+\subsubsection{Convergence}
+
+It is important to assess the sampling efficiency and converge of the predicted free energy values in order for the results to be reliable and reproducible.
+First, the comparison in convergence between a single trajectory approach and an ensemble of trajectories is compared for the MMPBSA and NMODE analysis methods in the context of free energy calculations. As the improvement in ensemble methods was evident, we investigated the length of each replica, extending the simulations from the original 5 ns simulation to 20 ns for each of the 25 replicas. It was important to sample the system long enough to cover a large part of the phase space, but not to oversample in places where the methods is no longer valid, for example during a de-intercalation pathway.
+
+\begin{figure}
+  \includegraphics[width=\columnwidth]{mmpbsa_conv.png}
+  \caption{Converge of the free energy for the 10 ligands investigated with the ESMACS method. The 4+16 ns equilibration and production run is used for all the intercalators to reach a converged result.}
+  \label{fig:mmpbsa_conv}
+\end{figure}
+
+\subsubsection{Predicting the ranking}
+
+The experimental free energy values are between -3.69 and -3.50 kcal/mol, making them hard to differentiate computationally. Approximate methods, like ESMACS, that are based on MMPBSA and NMODE for the free energy and entropy contribution, respectively do not have the resolution to differentiate experimental values at this scale. Nonetheless, correct error control and ensemble based calculations can give meaningful results relative to each other, i.e. ranking the intercalators based on their free energies will be comparable to experimental ranking.
+
+We have run 1, 2 and 3 trajectory calculations and as seen in Figure~\ref{fig:mmpbsa} the correlation improves, with the 3 trajectory being the most accurate with a correlation coefficient of $r_p=0.70$. The small interval of the experimental values suggests that the intercalators are very closely binding to the DNA. 
+
+The correlation achieved with ESMACS in this study suggests that one of the underlying forces (electrostatic, vdW, or internal energy) dominates the interaction gradient between the intercalators, and that signal is picked up by the MMPBSA calculation. Figure~\ref{fig:corrmat} shows the spread of the free energy values of the different components. Previous studies \cite{galindo2017computational} have shown that vdW interactions contribute most to the binding energy of the intercalators in absolute terms. However, the correlation of the different components to the total binding energy shows that the internal energy (the sum of bond, angle, and torsion terms) correlate with the total. This further supports our claim that the intercalation is an induced fit inside the two basepairs.
+
+\begin{figure}
+  \includegraphics[width=\columnwidth]{components}
+  \caption{A correlation plot of the different components contributing to the free energy in the MMPBSA study We compare the total to the different components to investigate which ones have some correlation.}
+  \label{fig:corrmat}
+\end{figure}
+
+Each ESMACS calculation was run 25 times, the only difference being the random seed at the start of the simulation. 
+
+Variations in the results from the different replica was used to evaluate the error on the predicted free energy. Figure~\ref{fig:bootstrap} shows the bootstrapped error as a function of the number of replicas. There is a levelling off at around 20 replicas, with 25 replicas showing consistently low error bars.
+
+\begin{figure}
+  \centering
+  \input{bootstrap_plot}
+  \caption{Bootstrapped error as a function of replica size. The error approached a small value at around 20 replicas, indicating that the 25 replicas we used in our protocols can estimate the ensemble average with a low error bar.}
+  \label{fig:bootstrap}
+\end{figure}
+
+
+NMODE analysis was performed to include an approximation to the entropy contribution. Results show that including NMODE does not improve the ranking. 
+
+\begin{figure}
+	\input{mmpbsa_plot}
+	\caption{Correlation between one (bottom), two (middle) and three (top) trajectory calculations and experiment. Values are presented for NMODE (red) analysis and without NMODE (blue). The best Pearson correlation is for the NMODE-less values starting from \num{0.64} for the 1, and 2 trajectory and \num{0.70} for the 3 trajectory. The NMODE calculations have a Pearson correlation of \numlist{0.39; 0.5; 0.62} for the 1, 2, and 3 trajectory calculations respectively.}
+	\label{fig:mmpbsa}
+\end{figure}
