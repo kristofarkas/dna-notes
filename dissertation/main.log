@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.16)  23 AUG 2018 13:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.6.16)  23 AUG 2018 14:08
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1844,7 +1844,7 @@ Package caption Info: End \AtBeginDocument code.
 Chapter 1.
 (./introduction.tex [4
 
-]) [5] (./experimental_models.tex) [6] [7] (./md_steps.tex [8] [9] [10] [11]) (./integrators_thermostats_barostats.tex [12] [13]) [14] [15] [16] (./afe_diagramm.tex) [17] (./mmpbsa.tex [18] (./mmpbsa_diagramm.tex)) [19] (./methods.tex [20]
+]) [5] (./experimental_models.tex) [6] [7] (./md_steps.tex [8] [9] [10]) (./integrators_thermostats_barostats.tex [11] [12]) [13] [14] [15] (./afe_diagramm.tex) [16] (./mmpbsa.tex [17] (./mmpbsa_diagramm.tex)) [18] [19] (./methods.tex [20]
 Chapter 2.
 <1z3f.png, id=86, 528.97626pt x 673.51625pt>
 File: 1z3f.png Graphic file (type png)
@@ -1893,7 +1893,7 @@ Package pdftex.def Info: intercalators.pdf  used on input line 31.
 (pdftex.def)             Requested size: 360.0pt x 35.99866pt.
 [21
 
-] [22 <./1z3f.png> <./1g3x.png> <./1hx4.png> <./2rou.png> <./1d11.png> <./1d12.png>] (./esmacs.tex [23 <./interc1.pdf> <./interc2.pdf> <./intercalators.pdf>]) (./ties.tex [24]) (./htbac.tex [25] [26]
+] [22 <./1z3f.png> <./1g3x.png> <./1hx4.png> <./2rou.png> <./1d11.png> <./1d12.png>] [23 <./interc1.pdf> <./interc2.pdf> <./intercalators.pdf>] (./esmacs.tex) (./ties.tex [24]) (./htbac.tex [25] [26]
 <HTBAC_architecture_model.pdf, id=128, 487.8225pt x 195.73125pt>
 File: HTBAC_architecture_model.pdf Graphic file (type pdf)
 <use HTBAC_architecture_model.pdf>
@@ -1958,14 +1958,14 @@ Underfull \hbox (badness 1024) in paragraph at lines 176--181
 Here is how much of TeX's memory you used:
  36346 strings out of 492646
  886081 string characters out of 6129563
- 1193756 words of memory out of 5000000
+ 1194127 words of memory out of 5000000
  39708 multiletter control sequences out of 15000+600000
  542149 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,21n,136p,2204b,2596s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 78i,21n,136p,2198b,2596s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (43 pages, 3318967 bytes).
+Output written on main.pdf (43 pages, 3355625 bytes).
 PDF statistics:
  257 PDF objects out of 1000 (max. 8388607)
  167 compressed objects within 2 object streams

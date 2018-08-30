@@ -1,35 +1,34 @@
 \contentsline {chapter}{\numberline {1}Introduction}{4}
 \contentsline {section}{\numberline {1.1}DNA and intercalation}{4}
-\contentsline {section}{\numberline {1.2}DNA modelling and Molecular dynamics}{5}
+\contentsline {section}{\numberline {1.2}DNA modelling and molecular dynamics}{5}
 \contentsline {subsection}{\numberline {1.2.1}Atomistic modelling}{5}
 \contentsline {subsection}{\numberline {1.2.2}Experimental models}{6}
 \contentsline {subsubsection}{X-ray crystallography}{6}
 \contentsline {subsection}{\numberline {1.2.3}Computational modelling}{6}
-\contentsline {subsubsection}{Quantum mechanics}{7}
+\contentsline {subsubsection}{Quantum mechanics}{6}
 \contentsline {subsubsection}{Molecular mechanics}{7}
 \contentsline {section}{\numberline {1.3}Theoretical details of molecular simulations}{7}
 \contentsline {subsection}{\numberline {1.3.1}Forcefield}{8}
 \contentsline {subsection}{\numberline {1.3.2}Main steps in a molecule dynamics simulation protocol}{8}
-\contentsline {subsubsection}{Minimisation}{9}
+\contentsline {subsubsection}{Minimisation}{8}
 \contentsline {subsubsection}{Assignment of velocities}{9}
-\contentsline {subsubsection}{Equilibration}{10}
+\contentsline {subsubsection}{Equilibration}{9}
 \contentsline {subsubsection}{Production}{11}
 \contentsline {subsection}{\numberline {1.3.3}Thermostat}{12}
-\contentsline {subsection}{\numberline {1.3.4}Barostat}{13}
+\contentsline {subsection}{\numberline {1.3.4}Barostat}{12}
 \contentsline {subsection}{\numberline {1.3.5}Integrators}{13}
 \contentsline {section}{\numberline {1.4}Free energy calculations}{14}
 \contentsline {subsection}{\numberline {1.4.1}Binding constant and equilibrium}{14}
-\contentsline {subsection}{\numberline {1.4.2}Thermodynamics: the binding affinity}{15}
+\contentsline {subsection}{\numberline {1.4.2}Thermodynamics: the binding affinity}{14}
 \contentsline {section}{\numberline {1.5}Computational methods for free energy calculations}{15}
-\contentsline {subsection}{\numberline {1.5.1}Theoretically exact free energy methods}{16}
+\contentsline {subsection}{\numberline {1.5.1}Theoretically exact free energy methods}{15}
 \contentsline {subsubsection}{The thermodynamic cycle}{16}
 \contentsline {subsubsection}{Thermodynamic integration}{17}
-\contentsline {subsection}{\numberline {1.5.2}Approximate methods}{18}
-\contentsline {subsection}{\numberline {1.5.3}MMPBSA}{18}
-\contentsline {subsubsection}{The thermodynamic cycle}{19}
-\contentsline {subsubsection}{Single and Component trajectories}{19}
-\contentsline {subsection}{\numberline {1.5.4}Sources of error}{20}
-\contentsline {subsubsection}{Incomplete phase space sampling}{20}
+\contentsline {subsection}{\numberline {1.5.2}MMPBSA}{18}
+\contentsline {subsubsection}{The thermodynamic cycle}{18}
+\contentsline {subsubsection}{Single and Component trajectories}{18}
+\contentsline {subsection}{\numberline {1.5.3}Sources of error}{19}
+\contentsline {subsubsection}{Incomplete phase space sampling}{19}
 \contentsline {subsubsection}{Force field accuracy}{20}
 \contentsline {chapter}{\numberline {2}Methods}{21}
 \contentsline {section}{\numberline {2.1}DNA intercalator models}{21}

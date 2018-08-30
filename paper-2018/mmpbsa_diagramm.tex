@@ -1,15 +1,3 @@
-\documentclass[margin=0.1in]{standalone}
-
-
-\usepackage{amsmath}
-\usepackage{tikz}
-\usetikzlibrary{positioning, calc}
-
-\pgfmathsetmacro{\s}{0.5}
-\pgfmathsetmacro{\r}{0.5cm}
-
-
-\begin{document}
 \begin{tikzpicture}
   [ 
   waterbox/.style={rectangle,draw=blue!50,fill=blue!10,thick, inner sep=0pt,minimum size=5*\r},
@@ -34,7 +22,7 @@
   \node at ($(c.center)!0.5!(a.center)$) {+};
   \node at ($(c'.center)!0.5!(a'.center)$) {+};
   
-  \node[text width=10cm, align=center] [above=of a] {Thermodynamic cycle used to indirectly calculate the absolute free energy of intercalation};
+  % \node[text width=10cm, align=center] [above=of a] {Thermodynamic cycle used to indirectly calculate the absolute free energy of intercalation};
   
   
   \foreach \x in {b.center, b'.center, c.center, c'.center} {
@@ -59,4 +47,3 @@
   \draw[intercalator] (b'.center) ++(-0.8*\s, 1.25*\s) -- ++(1.6*\s, 0);
 
 \end{tikzpicture}
-\end{document}
