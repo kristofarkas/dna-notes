@@ -1,3 +1,13 @@
+\documentclass[margin=0.1in]{standalone}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc}
+
+\pgfmathsetmacro{\s}{0.5}
+\pgfmathsetmacro{\r}{0.5cm}
+
+\begin{document}
 \begin{tikzpicture}
   [ 
   waterbox/.style={rectangle,draw=blue!50,fill=blue!10,thick, inner sep=0pt,minimum size=5*\r},
@@ -47,3 +57,5 @@
   \draw[intercalator] (b'.center) ++(-0.8*\s, 1.25*\s) -- ++(1.6*\s, 0);
 
 \end{tikzpicture}
+
+\end{document}

@@ -23,16 +23,11 @@
 
 
 \title{Predicting the binding free energy of DNA intercalators}
-
-% \author{Student 14016005 | CHEMGM01}
-
-\setcounter{tocdepth}{3}
+\author{Kristof Farkas-Pall}
 
 \begin{document}
 
 % \maketitle
-
-% \tableofcontents
 
 \section*{Abstract}
 
@@ -40,148 +35,6 @@ Planar aromatic molecules can interact with DNA chains by intercalating between 
 
 \section{Introduction}
 
-% \input{introduction}
-
-% \section{DNA modelling and molecular dynamics}
-% 
-% \subsection{Atomistic modelling}
-% 
-% The structure of biomolecule, like DNA is complex and interesting. How can we gain insight into the  composition of structures like this on an atomic level? Experimental techniques, like CryoEM \cite{bai2012cryo}, x-ray crystallography or NMR provide information about the composition at a resolution small enough to distinguish atoms, and some methods also provide dynamical properties too. However, certain phenomena or physical property is simply out of the reach of these experimental techniques. In silico techniques, such as molecular dynamics \cite{cheatham1995molecular}, can provide insight otherwise not accessible to experimentalists. The focus of this thesis is applying such in silico methods to bio-molecular systems, with a particular emphasis on molecular dynamics. 
-% 
-% Nonetheless, as a starting model, even in silico methods take data from experiment, therefore it is briefly described here.
-% 
-% \input{experimental_models}
-% 
-% \subsection{Computational modelling}
-% 
-% Simulating a system via computational methods requires an initial model, where by model, we refer to the coordinates of every particle in the structure of interest. If, for example, we want to simulation nucleic acid structures, then the model is the three dimensional coordinate of every atom in the DNA structure. In general the model can be build in one of two ways: by hand de novo, or using another source (experimentally derived structures for example). The quality of the initial starting structure can have a large effect on the computational results and the validity of the simulation. This will become apparent in the results section, where two similar systems were simulated with different levels of initial structure validity.   
-% 
-% \subsubsection{Quantum mechanics}
-% 
-% In a quantum mechanical (QM) description of a system, the electrons are explicitly accounted for as they are the fundamental particles of this level of description. The energy of the system is calculated as the interaction energy between electrons based on electronic structure calculations. There are few (if any) empirical or fitted parameters in these models, but the underlying physical description is sometimes approximated for tractability. Usually QM calculations are very expensive and scale cubic (or worse) with the number of electrons in the system \cite{vsponer1996hydrogen}.
-% 
-% \subsubsection{Molecular mechanics}
-% \label{sec:mm}
-% 
-% In molecular mechanics (MM) the description is based on particles corresponding to atoms. Every atom in the system has a number of parameters defining the interaction between other particles, including a partial charge, bond, angle and torsion parameters, and non-bonded interaction parameters. These parameters are all empirically determined (fitted to experimental observables, quantum mechanical calculations, or other data). MM simulations are faster than quantum calculations, hence why this study was conducted using MM methods to simulate our DNA based systems. Some of the limitations of MM methods, including lower accuracy and the lack of the ability of bond rearrangement was considered, and determined to be a non issue for the systems at hand. Furthermore, QM simulations are too expensive to run for adequate amount of time (nanoseconds of simulations) that is required to reach and sample the equilibrium state. The size of the system is also an important decision factor in choosing between QM and MM. Roughly speaking, QM simulations have on the order of a couple of hundreds of atoms, while MM simulations are routinely run with tens of thousands of atoms \cite{leach2001molecular, frenkel2001understanding}.
-% 
-% \section{Theoretical details of molecular simulations}
-% 
-% Simulating molecular systems is, at a high level, very simple and straight forward. First, build a particle based description of the system, where particles are the only entities that can interact with each other or the environment. Then, based on rules, propagate the system through time starting from some initial state (as described before the state of a system is the position and velocities of every particle) for a given number of steps or iterations. The rules by which you propagate the system can be either deterministic or random. As you build up a collection of consecutive states of the simulated system, certain properties can be calculated per frame (frame being a state in the context of a simulation) or averaged over multiple states to get ensemble estimates over time. 
-% 
-% There are two main categories of molecule simulations based on the nature of the propagation rules: Molecular Dynamics (MD) or Monte Carlo (MC). Molecular dynamics refers to the numerical integration of the equations of motion. They are used to investigate thermodynamic properties as well as structural and dynamical phenomena of the system. Monte Carlo type simulations on the other hand, generate new states based on the current state via probabilistic rules. The set of states generated this way can be used to predict thermodynamic and structural properties, but \emph{not} dynamical ones. This is because a MC simulation has no concept of time by which states are ordered and evolved.
-% 
-% % \subsection{Equation of motion}
-% 
-% \subsection{Forcefield}
-% 
-% The molecular mechanics model described in section~\ref{sec:mm} is based on a number of interatomic potential energy functions. All these potential energy functions have a number of constants, the values of which are fitted to higher level calculations or experiment.
-% 
-% In order to have credibility in the theoretical models that are used to predict experimental measurements, or more drastically, substituting them, we have to validate the force fields that are used in the molecular dynamics simulations. In particular, the last generation of force-fields for DNA systems specifically has raised questions about their validity especially at longer simulation timescales. It was found that while not all theoretical simulations are equally reliable, the latest generation of force fields of the AMBER family designed to model DNA (BSC1 \cite{ivani2016parmbsc1} and OL15 \cite{zgarbova2015refinement}) can be safely used to reproduce the global structure of DNA, and predict observable quantities of interest, like the free energy of binding. They provide the most accurate results when comparing MD trajectory simulation data to experimental observables like NMR structure of X-Ray resolved structures. Furthermore, these forcefields reproduce experiments in an unbiased environment, and a common technique to force DNA trajectory to align with experimental data, termed restrained MD, is not essential for this study.
-% 
-% \input{md_steps}
-% 
-% \input{integrators_thermostats_barostats}
-
-% \section{Free energy calculations}
-% 
-% \subsection{Binding constant and equilibrium}
-% 
-% Planar aromatic molecules containing a fused ring system scaffold can intercalate between consecutive DNA base pairs. They are termed intercalators. Whilst there are cases when intercalators form covalent bonds with the DNA base pairs this is an irreversible process. If the bonding is facilitated via non-bonded interactions only ($\pi$ stacking), then the interaction is reversible \cite{berg2002biochemistry}. The study here is only concerned with the later intercalation type, as this is the more common form and the tools used (molecular mechanics) are suited to model this type of interaction only. In a solution containing double stranded DNA fragments and the intercalator, they will be constantly interacting, with the intercalator binding and unbinding from the DNA. This process can be modelled by a reversible chemical reaction
-% 
-% \begin{equation}
-%   A + B \underset{k_1}{\stackrel{k_{-1}}{\rightleftharpoons}} AB
-% \end{equation}
-% 
-% where the rate constant of the forward and backward reaction are the intercalation and de-intercalation reaction rates respectively. In equilibrium the two rate equal, therefore the concentration of each component (DNA, intercalator, and complex) is constant. The association constant $K_a$ is determined by the concentrations at equilibrium, and is given by
-% \begin{equation}
-%   K_a = \frac{k_1}{k_{-1}} = \frac{[AB]_{eq}}{[A]_{eq} [B]_{eq}}
-% \end{equation}
-% 
-% \subsection{Thermodynamics: the binding affinity}
-% 
-% One can interpret the process of intercalation as the reaction to minimise the appropriate thermodynamic potential for the given ensemble \cite{adkins1983equilibrium}. The most common ensemble for the experimental conditions is the NPT ensemble, because the number of molecules, pressure and temperature are constant. The associated potential if the Gibbs free energy, $G$, given by
-% 
-% \begin{equation}
-%   G = U + pV - TS = H - TS
-% \end{equation}
-% 
-% The intercalation will happen spontaneously if the difference in free energy ($\Delta G$) between the intercalator and DNA in free state and the complex is negative. The intercalation then will happen until the free energy is minimised and equilibrium has been reached. This difference can be calculated as
-% 
-% \begin{equation}
-%   \Delta G = G(complex) - G(DNA) - G(intercalator)
-% \end{equation} 
-% 
-% The numerical value corresponding to the strength of binding, with more negative values being stronger binders. The change in free energy can also be related to the aforementioned equilibrium constant $K_a$ via the van't Hoff equation
-% 
-% \begin{equation}
-%   \Delta G = - R T \log K_a
-% \end{equation}
-% 
-% This means that the temperature and the free energy difference are closely related. If the temperature increases then the concentration of the complex also increases at the equilibrium. The value of $\Delta G$ is often called binding affinity or free energy of binding. The two terms can be used interchangeably. For certain use cases it is meaningful to break down the free energy difference into an enthalpic and entropic component
-% 
-% \begin{equation}
-%   \Delta G = \Delta H - T \Delta S
-% \end{equation} 
-% 
-% \section{Computational methods for free energy calculations}
-% 
-% An approach to calculating the binding free energy is via computational techniques. This method form the basis of this thesis. To compute the free energy this way offers a number of advantages over investigating the system experimentally. Molecules that cannot be synthesis can be simulated in silico, and we can study systems at an atomistic level. Molecular simulations provide this level of detail, but in order to calculate the macroscopic properties (like the free energy \cite{macke1961ld}) we have to use statistical methods to derive them from the the microscopic simulations.
-% 
-% \subsection{Theoretically exact free energy methods}
-% 
-% There are a number of formally exact methods to calculate the free energy from simulation. By exact we mean that it contains to empirically fitted parameters in the equations. Two of the main techniques are called free energy perturbation (FEP) which is based on exponential averages of the change in the potential energy, and thermodynamic integration (TI) which is based on integrating the system as it changes from one state to another through an alchemical pathway \cite{chipot2007free, deng2009computations}. Due to considerations in computational efficiency, the theoretically exact calculations compute free energy \emph{differences} simulated via non-physical system transformations (known as alchemical transformations). A thermodynamic cycle can illustrate how these alchemical changes can be related to relative differences which are of real interest
-% 
-% \subsubsection{The thermodynamic cycle}
-% 
-% Free energy is a function of state and as such cumulative variations around a closed thermodynamic cycle sum to zero. Figure~\ref{fig:tiescycle} depicts such a cycle which could be used to calculate the relative binding affinity, $\Delta \Delta G$, of two different intercalators to the same target where
-% 
-% \begin{equation}
-%   \Delta \Delta G_{intercalation} = \Delta G_{a} - \Delta G_{b} 
-% \end{equation}
-% 
-% The vertical arrows show the intercalation of two molecules A and B, to the DNA, with free energy differences $\Delta G_{a}$ and $\Delta G_{b}$. This path involves substantial rearrangement of the DNA chain to accommodate the molecules, and the simulation would take a long time to converge. The horizontal paths describe the free energy differences associated with the change of molecule A into molecule B in the intercalated and free state respectively. While converting one molecule into another is not physical, it can be achieved in a computer simulation. If the two molecules are similar in composition, then the relative rearrangement in the DNA with will small, and the simulation will converge quickly. We can use the fact that the free energy is a state function to calculate the relative free energy of binding as
-% 
-% \begin{equation}
-%   \Delta \Delta G_{intercalation} = \Delta G_{1} - \Delta G_{2} 
-% \end{equation}
-% 
-% It path taken does not matter as the difference in the free energy of the intercalated state of the two molecules is independent of it. The path taken is represented by introducing an alchemical variable into the Hamiltonian called $\lambda$ that takes on values between $[0, 1]$. Then, the only constraint on the hamiltonian is that at $\lambda = 0$ is corresponds to the molecule A only, and at $\lambda = 1$ to molecule B. A similar approach can be applied in the investigation of mutating the DNA sequence but keeping the intercalated molecule the same.
-% 
-% State be need not be a molecule, but the absence of one too. In this case the free energy of the absolute binding is calculate in much of the similar manner as the relative free energy is calculated with minor differences.
-% 
-% \begin{figure}
-%   \centering
-%   \input{afe_diagramm}
-%   \caption{The thermodynamic cycle illustrating how to calculate the relative binding free energy of two intercalators. The two intercalators (red and blue) bind to the same DNA sequence. The horizontal arrows are the alchemical changes from one intercalator to another, while the vertical arrows represent the independent free energies of intercalator binding.}
-%   \label{fig:tiescycle}
-% \end{figure}
-% 
-% \subsubsection{Thermodynamic integration}
-% 
-% During thermodynamic integration we run a number of independent simulations for different values of $\lambda$. The parameter takes values between 0 and 1, and represent the gradual morphing from molecule A into molecule B. The ensemble average of the derivative of the potential energy with respect to the parameters is numerically integrated to get the free energy difference. 
-% 
-% \begin{equation}
-%   \Delta G = \int_{1}^{0} \langle \frac{\partial V (x, \lambda)}{\partial \lambda} \rangle \partial \lambda
-% \end{equation}
-% 
-% A key difference to FEP is that in TI each average is independent of each other. This means that sufficient simulations need to run to correctly integrate numerically, which increases the computational requirements \cite{chipot2002free}.
-% 
-% It is important to note, that in TI, the alchemical transformation has to run for both the bound states and the unbound states. Furthermore, the difference in consecutive $\lambda$ windows need to be small. This is necessary in order to provide enough points for accurate numerical integration. In general this requires parallel simulations on the order of ten, each running for as long as convergence is reached. This method is computationally expensive compared to other less accurate methods, more approximate methods.
-% 
-% \input{mmpbsa}
-% 
-% \subsection{Sources of error}
-% 
-% Modelling the system and running simulations, just like experimental techniques, contain sources of error. There are two major sources or inaccuracy in MD simulations: phase space sampling, and force field inaccuracy.
-% 
-% \subsubsection{Incomplete phase space sampling}
-% 
-% It is key to sample the phase space adequately and obtain results that are well converged, as this is a requirement for reliable free energy values. The complete phase space of DNA is large, and it is not possible to sample all of this with simulation methods, therefore we have to make sure that the phase space that we do sample is representative. To understand what we mean by representative sampling, consider that the phase space of a DNA is a set of energy minima separated by energy barriers of different size. Being and sampling only one minima is clear to not be enough to get reliable results. On the other hand if we sample a large number of these minimise the changes are that a representative portion of the landscape has been explored. In general the complete topology of the landscape is not known, and neither is the extent to which our simulation sampled it, therefore comparing the observable results to experiment is an important metric to consider.
-% 
-% \subsubsection{Force field accuracy}
-% 
-% Even if we were to completely sample the free energy landscape, the accuracy of our results will be limited by how well the model describes the physical system. Because for the systems under investigation in this thesis, quantum mechanical approaches are impractical due to the size of the system, the accuracy of the model will largely depend on how well the force field describes the interactions of the particles \cite{dnaforcefieldcomp}.
 
 \input{methods}
 
