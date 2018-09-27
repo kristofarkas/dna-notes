@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1535029701 "main.aux" "main.bbl" "main" 1535029739
+["bibtex main"] 1538061979 "main.aux" "main.bbl" "main" 1538062038
   "/usr/local/texlive/2018/texmf-dist/bibtex/bst/base/plain.bst" 1480098433 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1535029707 12853 b15d5a8816422641adb5e9c44221267d ""
+  "main.aux" 1538062037 12853 b15d5a8816422641adb5e9c44221267d ""
   "mybib.bib" 1535022613 14825 9c52e0d9d92d5235f503b667c2ae579b ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1535029701 "main.tex" "main.pdf" "main" 1535029739
+["pdflatex"] 1538062031 "main.tex" "main.pdf" "main" 1538062038
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -216,7 +216,7 @@
   "4-ring-mmpbsa-failednmode.csv" 1534417581 2186 3dc5894a492e47ac7918d0ce682a8b9f ""
   "4-ring-mmpbsa.csv" 1534417581 2365 8db7c2212f7e4a42f33a4da1a3d49a77 ""
   "HTBAC_architecture_model.pdf" 1535009781 41244 76936163b86d5aeac410df463c192412 ""
-  "afe_diagramm.tex" 1534759394 1780 981271543e6c44885390795edd811ad3 ""
+  "afe_diagramm.tex" 1538061732 2008 fbbe7de97a9f9d16ec717f84e36072c6 ""
   "bootstrap.csv" 1534775220 1250 0ead4fcf104e40daef6c472a7186c073 ""
   "bootstrap_plot.tex" 1534775514 164 6e1b612209a402795ad19112f3043a29 ""
   "components.png" 1535023039 2163855 4439678c756ed8a4179f311e29cdae69 ""
@@ -230,16 +230,16 @@
   "interc2.pdf" 1535027218 1691 d0e304636556a2d4d48859e0b67eaa31 ""
   "intercalators.pdf" 1534417581 2885 7086a74282bbfcc937dd8184c67beb06 ""
   "introduction.tex" 1535028356 4414 b8d0aa8affab5465bde7fb2048782ff8 ""
-  "main.aux" 1535029707 12853 b15d5a8816422641adb5e9c44221267d ""
-  "main.bbl" 1535029701 11668 0c3575f734555c12027e8feb1335e7fd "bibtex main"
-  "main.tex" 1535028898 19434 0f47d31e7c5fb7b6dca06b7e0eb6e577 ""
-  "main.toc" 1535029707 3077 f878fd7f7216955ef2b3f9c0cc5268d0 ""
+  "main.aux" 1538062037 12853 b15d5a8816422641adb5e9c44221267d ""
+  "main.bbl" 1538061979 11668 0c3575f734555c12027e8feb1335e7fd "bibtex main"
+  "main.tex" 1538062030 19484 23f3f11592312143a8e70263ab69bdde ""
+  "main.toc" 1538062037 3077 f878fd7f7216955ef2b3f9c0cc5268d0 ""
   "md_steps.tex" 1535016604 9786 07117d9ec01c31aeb67cd6fb99fe8fbf ""
   "methods.tex" 1535028245 5178 0833757ee9e349c415935bbaef2325e1 ""
   "mmpbsa.tex" 1535028550 4125 9ee03d14b1e8dbb964457d298112f8e7 ""
   "mmpbsa_conv.png" 1535028800 460670 4d0a5615f990628079abf14e10d71d39 ""
-  "mmpbsa_diagramm.tex" 1534759531 2167 ba66eefea82cdd6232fe94cb7ed74b4e ""
-  "mmpbsa_plot.tex" 1535011797 6588 e89437c5dee434c9bb8650230bef343e ""
+  "mmpbsa_diagramm.tex" 1538061732 2394 c7419a399adbabeaa409ca0fc46f7cd6 ""
+  "mmpbsa_plot.tex" 1538061971 6965 7ba715a88edf509d60fc195ed7565688 ""
   "results.tex" 1535026204 2781 1f073afe71fac662a379abf8e37fa1e2 ""
   "results_esmacs.tex" 1535023503 4981 ac1df57c245dc10217fd0706bce724ea ""
   "results_ties.tex" 1535029281 2130 3e4209f0c1b5db26f9b8ff3a10adc5d6 ""
@@ -248,7 +248,7 @@
   "ties_conv.png" 1534990358 148289 59fa73e1b42c0b2e3464636627248cb0 ""
   "ties_plot.tex" 1535011387 337 0d47284979948f61ef95d7bbaba2229b ""
   (generated)
-  "main.toc"
   "main.pdf"
-  "main.log"
+  "main.toc"
   "main.aux"
+  "main.log"
